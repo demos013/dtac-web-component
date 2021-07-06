@@ -2,38 +2,33 @@ import peerDepsExternal from 'rollup-plugin-peer-deps-external'
 import resolve from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
 import sourcemaps from 'rollup-plugin-sourcemaps'
-import copy from 'rollup-plugin-copy'
 import typescript from 'rollup-plugin-typescript2'
 import uglify from 'rollup-plugin-uglify'
+import babel from 'rollup-plugin-babel'
 
 const pkg = require('./package.json')
-
-const outputs = [
-  { name: 'index.esm.js', format: 'es' },
-  { name: 'index.js', format: 'commonjs', preferConst: false },
-]
 
 export default [
   {
     input: 'src/index.ts',
+    external: [/@material-ui\/core\/.*/],
     plugins: [
       uglify.uglify(),
+      babel({
+        exclude: 'node_modules/**', // only transpile our source code,
+        plugins: [
+          ['@babel/plugin-proposal-decorators', { legacy: true }],
+          '@babel/plugin-proposal-class-properties',
+          '@babel/plugin-proposal-object-rest-spread',
+          '@babel/plugin-transform-runtime',
+        ],
+      }),
       peerDepsExternal(),
       resolve(),
       commonjs(),
       sourcemaps(),
-      // copy({
-      //   targets: [{ src: 'src/components/Icon/icons/**/*', dest: 'dist/icons' }],
-      // }),
-      // alias({
-      //   entries: [
-      //     { find: 'swiper', replacement: './node_modules/swiper/js/swiper.js' },
-      //     { find: 'swipercss', replacement: './node_modules/swiper/css/swiper.css' },
-      //   ],
-      // }),
       typescript({ useTsconfigDeclarationDir: true }),
     ],
-    external: (id) => !/^(\.|\/)/.test(id),
     output: [
       {
         file: pkg.main,
