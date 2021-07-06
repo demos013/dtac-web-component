@@ -130,7 +130,7 @@ const Modal: FC<ModalProps> = (props) => {
                   {cancelName}
                 </Button>
               )}
-              <Button primary onClick={onClickPositive} fullWidth>
+              <Button variant="contained" onClick={onClickPositive} fullWidth>
                 {submitName}
               </Button>
             </DialogActions>

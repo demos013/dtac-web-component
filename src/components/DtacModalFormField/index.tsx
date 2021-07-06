@@ -153,7 +153,7 @@ const DtacModalFormField: FC<DtacModalFormFieldProps> = (props) => {
             </DialogContent>
 
             <DialogActions className={classes.dialogActionRoot}>
-              <Button primary onClick={onClickPositive} fullWidth>
+              <Button variant="contained" onClick={onClickPositive} fullWidth>
                 {submitName}
               </Button>
             </DialogActions>
