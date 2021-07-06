@@ -3,7 +3,6 @@ import resolve from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
 import sourcemaps from 'rollup-plugin-sourcemaps'
 import typescript from 'rollup-plugin-typescript2'
-import uglify from 'rollup-plugin-uglify'
 import babel from 'rollup-plugin-babel'
 
 const pkg = require('./package.json')
@@ -13,7 +12,6 @@ export default [
     input: 'src/index.ts',
     external: [/@material-ui\/core\/.*/],
     plugins: [
-      uglify.uglify(),
       babel({
         exclude: 'node_modules/**', // only transpile our source code,
         plugins: [
