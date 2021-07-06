@@ -17,7 +17,7 @@ stories.add('Button', () => {
 stories.add('Modal', () => {
   return (
     <div>
-      <Modal title={'Title'} submitName={'save'} />
+      <Modal title={'Title'} submitName={'save'} open/>
     </div>
   )
 })
