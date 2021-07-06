@@ -12,6 +12,7 @@ const item = {
   boxizing: 'border-box',
   flexGrow: 1,
   flexBasis: 'calc(25% - 10px)',
+  textAlign: 'center',
 }
 const useStyles = makeStyles((theme) => ({
   gamingnation: {

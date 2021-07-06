@@ -37,8 +37,10 @@ const useStyles = makeStyles<Theme, Props>((theme: Theme) => ({
     color: '#FFFFFF',
     backgroundColor: '#007AD0',
     '&:hover': {
-      textDecoration: 'none',
-      backgroundColor: '#007AD0',
+      background: '#005a99',
+    },
+    '&:active': {
+      background: '#005a99',
     },
     '&.MuiTouchRipple-root span': {
       backgroundColor: '#FFFFFF!important',
