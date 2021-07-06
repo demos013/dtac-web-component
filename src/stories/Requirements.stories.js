@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { storiesOf } from '@storybook/react'
 import './styles.css'
 import Button from '../components/Button'
-import Modal from '../components/Modal'
+import Modal from '../components/DtacModal'
 
 const stories = storiesOf('dtac component test', module)
 

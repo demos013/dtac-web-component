@@ -4,6 +4,7 @@ import commonjs from '@rollup/plugin-commonjs'
 import sourcemaps from 'rollup-plugin-sourcemaps'
 import copy from 'rollup-plugin-copy'
 import typescript from 'rollup-plugin-typescript2'
+import uglify from 'rollup-plugin-uglify';
 
 const pkg = require('./package.json')
 
@@ -16,6 +17,7 @@ export default [
   {
     input: 'src/index.ts',
     plugins: [
+      uglify(),
       peerDepsExternal(),
       resolve(),
       commonjs(),

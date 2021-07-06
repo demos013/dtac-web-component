@@ -1,4 +1,4 @@
-import React, { FC, memo, useEffect } from 'react'
+import React, { FC, useEffect } from 'react'
 // import Image from 'next/image'
 import Dialog from '@material-ui/core/Dialog'
 import { DialogProps } from '@material-ui/core/Dialog/Dialog'

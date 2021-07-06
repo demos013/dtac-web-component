@@ -1,6 +1,6 @@
 {
   "name": "@demos013/dtac-web-components",
-  "version": "1.0.6",
+  "version": "1.0.9",
   "description": "dtac Components for web helps developers execute dtac design. Developed by a core team of engineers and UX designers at dtac",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -62,7 +62,8 @@
   },
   "dependencies": {
     "@material-ui/core": "^4.11.4",
-    "@material-ui/icons": "^4.11.2"
+    "@material-ui/icons": "^4.11.2",
+    "rollup-plugin-uglify": "^6.0.4"
   },
   "resolutions": {
     "styled-components": "^5"
