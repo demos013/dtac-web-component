@@ -47,6 +47,7 @@ interface ButtonProps {
   width?: string
   height?: number
   disableRipple?: boolean
+  fullWidth?: boolean
   onClick?: () => void
 }
 
@@ -55,6 +56,7 @@ const ButtonComponent: FC<ButtonProps> = ({
   primary = false,
   disabled = false,
   disableRipple = false,
+  fullWidth = false,
   onClick,
   width = '120px',
 }): ReactElement => {
@@ -63,6 +65,7 @@ const ButtonComponent: FC<ButtonProps> = ({
   return (
     <>
       <Button
+        fullWidth={fullWidth}
         disableRipple={disableRipple}
         variant={primary ? 'contained' : 'outlined'}
         disabled={disabled}
