@@ -9,5 +9,6 @@ dtac Components for web helps developers execute dtac design. Developed by a cor
 ### ES6 via npm
 
 ```sh
-npm install dtac-component-web
+npm i @demos013/dtac-web-components or
+yarn add @demos013/dtac-web-components
 ```

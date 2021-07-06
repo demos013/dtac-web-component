@@ -1,6 +1,6 @@
 {
-  "name": "@demos/dtac-web-components",
-  "version": "1.0.0",
+  "name": "@demos013/dtac-web-components",
+  "version": "1.0.1",
   "description": "dtac Components for web helps developers execute dtac design. Developed by a core team of engineers and UX designers at dtac",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -11,7 +11,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "build-lib": "rollup -c"
+    "build": "rollup -c"
   },
   "files": [
     "dist/"
@@ -64,14 +64,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dtacmobile/dtac-component-web.git"
+    "url": "git+https://github.com/demos013/dtac-web-components.git"
   },
   "keywords": [
     "dtac",
     "component"
   ],
   "bugs": {
-    "url": "https://github.com/dtacmobile/dtac-component-web/issues"
+    "url": "https://github.com/demos013/dtac-web-components/issues"
   },
-  "homepage": "https://github.com/dtacmobile/dtac-component-web#readme"
+  "homepage": "https://github.com/demos013/dtac-web-components#readme"
 }
