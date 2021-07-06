@@ -1,6 +1,6 @@
 {
   "name": "@demos013/dtac-web-components",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "dtac Components for web helps developers execute dtac design. Developed by a core team of engineers and UX designers at dtac",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",

@@ -6,7 +6,7 @@ type Props = {
   width: string
 }
 const useStyles = makeStyles<Theme, Props>((theme: Theme) => ({
-  root: {
+  button_root: {
     fontFamily: 'dtac_2018regular, Padauk',
     minWidth: 120,
     width: ({ width }) => width,
@@ -15,7 +15,7 @@ const useStyles = makeStyles<Theme, Props>((theme: Theme) => ({
     fontSize: 14,
     padding: '6px 8px',
   },
-  default: {
+  button_default: {
     color: '#0C1026',
     '&:hover': {
       textDecoration: 'none',
@@ -26,7 +26,7 @@ const useStyles = makeStyles<Theme, Props>((theme: Theme) => ({
       opacity: 0.3,
     },
   },
-  primary: {
+  button_primary: {
     color: '#FFFFFF',
     backgroundColor: '#007AD0',
     '&:hover': {
@@ -66,7 +66,9 @@ const ButtonComponent: FC<ButtonProps> = ({
         disableRipple={disableRipple}
         variant={primary ? 'contained' : 'outlined'}
         disabled={disabled}
-        className={`${classes.root} ${primary ? classes.primary : classes.default}`}
+        className={`${classes.button_root} ${
+          primary ? classes.button_primary : classes.button_default
+        }`}
         onClick={onClick}
       >
         {children}
