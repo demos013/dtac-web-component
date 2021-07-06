@@ -1,3 +1,4 @@
+import React, { FC, memo } from 'react'
 import Dialog from '@material-ui/core/Dialog'
 import { DialogProps } from '@material-ui/core/Dialog/Dialog'
 import DialogActions from '@material-ui/core/DialogActions'
@@ -9,7 +10,6 @@ import TextField from '@material-ui/core/TextField/TextField'
 import Typography from '@material-ui/core/Typography'
 import CloseIcon from '@material-ui/icons/Close'
 import clsx from 'clsx'
-import React, { FC, memo } from 'react'
 import Button from '../Button'
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -87,15 +87,15 @@ const DtacModalFormField: FC<DtacModalFormFieldProps> = (props) => {
   const {
     open,
     onClose,
-    onClickNegative,
+    // onClickNegative,
     onClickPositive,
     closeButton = false,
     children,
     title,
     description = 'Copy goes here',
     submitName,
-    cancelName,
-    srcPath,
+    // cancelName,
+    // srcPath,
     fullWidth = false,
     maxWidth = false,
     align = 'center',
