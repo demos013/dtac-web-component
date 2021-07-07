@@ -26,11 +26,14 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     dialogActionRoot: {
       padding: 24,
+      display: 'flex',
+      justifyContent: 'center',
       '& > Button:not(:first-child)': {
         marginLeft: 16,
       },
-      [theme.breakpoints.down('xs')]: {
+      [theme.breakpoints.down(360)]: {
         display: 'block',
+        textAlign: 'center',
         '& > Button:not(:first-child)': {
           marginLeft: 0,
           marginTop: 16,
