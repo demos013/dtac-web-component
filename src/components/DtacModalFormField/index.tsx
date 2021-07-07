@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme: Theme) =>
     dialogTitle: {
       padding: '24px 16px 12px',
     },
-    contentText: {
+    description: {
       fontSize: 14,
       fontWeight: 400,
       letterSpacing: 0,
@@ -42,13 +42,6 @@ const useStyles = makeStyles((theme: Theme) =>
       padding: 24,
       '& > Button:not(:first-child)': {
         marginLeft: 16,
-      },
-      [theme.breakpoints.down('xs')]: {
-        display: 'block',
-        '& > Button:not(:first-child)': {
-          marginLeft: 0,
-          marginTop: 16,
-        },
       },
     },
     titleForm: {
@@ -65,6 +58,10 @@ const useStyles = makeStyles((theme: Theme) =>
     formWrapper: {
       textAlign: 'left',
       marginTop: 22,
+    },
+    dtacmodalformfield_title: {
+      fontSize: 16,
+      fontWeight: 700,
     },
   }),
 )
@@ -114,7 +111,9 @@ const DtacModalFormField: FC<DtacModalFormFieldProps> = (props) => {
         ) : (
           <>
             <DialogTitle id="alert-dialog-title" className={classes.dialogTitle}>
-              <Typography align="center">{title}</Typography>
+              <Typography align="center" className={classes.dtacmodalformfield_title}>
+                {title}
+              </Typography>
               {closeButton && (
                 <IconButton
                   aria-label="close"
@@ -133,7 +132,7 @@ const DtacModalFormField: FC<DtacModalFormFieldProps> = (props) => {
                 </div>
               )}
 
-              <Typography className={classes.contentText} align={align}>
+              <Typography className={classes.description} align={align}>
                 {description}
               </Typography>
 
@@ -153,7 +152,7 @@ const DtacModalFormField: FC<DtacModalFormFieldProps> = (props) => {
             </DialogContent>
 
             <DialogActions className={classes.dialogActionRoot}>
-              <Button variant="contained" onClick={onClickPositive} fullWidth>
+              <Button variant="contained" onClick={onClickPositive} fullWidth disabled>
                 {submitName}
               </Button>
             </DialogActions>
