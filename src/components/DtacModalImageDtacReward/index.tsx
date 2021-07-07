@@ -13,32 +13,31 @@ import Button from '../Button'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    root: {},
-    dialogContent: {
+    dtacmodalimagereward_dialogContent: {
       padding: '0px 16px',
     },
-    closeButton: {
+    dtacmodalimagereward_closeButton: {
       position: 'absolute',
       right: theme.spacing(1),
       top: theme.spacing(1),
       color: theme.palette.grey[500],
     },
-    dialogTitle: {
+    dtacmodalimagereward_dialogTitle: {
       padding: '62px 16px 12px',
     },
-    contentTextLeft: {
+    dtacmodalimagereward_contentTextLeft: {
       fontSize: 16,
       fontWeight: 300,
       letterSpacing: 0,
       color: '#767676',
     },
-    contentTextRight: {
+    dtacmodalimagereward_contentTextRight: {
       fontSize: 16,
       fontWeight: 700,
       letterSpacing: 0,
       color: '#000000',
     },
-    dialogActionRoot: {
+    dtacmodalimagereward_dialogActionRoot: {
       padding: 24,
       '& > Button:not(:first-child)': {
         marginLeft: 16,
@@ -51,7 +50,7 @@ const useStyles = makeStyles((theme: Theme) =>
         },
       },
     },
-    tuadeeWrapper: {
+    dtacmodalimagereward_tuadeeWrapper: {
       position: 'fixed',
       top: 0,
       [theme.breakpoints.up(320)]: {
@@ -69,7 +68,7 @@ const useStyles = makeStyles((theme: Theme) =>
         position: 'fixed !important',
       },
     },
-    marginTop16: {
+    dtacmodalimagereward_marginTop16: {
       marginTop: 16,
     },
   }),
@@ -79,12 +78,9 @@ interface DtacModalImageDtacRewardProps extends DialogProps {
   timer?: number
   title: string
   description?: string
-  cancelName?: string
   submitName: string
   closeButton?: boolean
-  align?: 'inherit' | 'left' | 'center' | 'right' | 'justify'
   onClose?: () => void
-  onClickNegative?: () => void
   onClickPositive?: () => void
 }
 
@@ -93,18 +89,15 @@ const DtacModalImageDtacReward: FC<DtacModalImageDtacRewardProps> = (props) => {
   const {
     open,
     onClose,
-    onClickNegative,
     onClickPositive,
     closeButton = false,
     children,
     title,
     description = 'Copy goes here',
     submitName,
-    cancelName,
     timer,
     fullWidth = false,
     maxWidth = false,
-    align = 'center',
   } = props
 
   useEffect(() => {
@@ -127,15 +120,18 @@ const DtacModalImageDtacReward: FC<DtacModalImageDtacRewardProps> = (props) => {
           children
         ) : (
           <>
-            <div className={classes.tuadeeWrapper}>
+            <div className={classes.dtacmodalimagereward_tuadeeWrapper}>
               <img src={'/images/rectangle.svg'} width={198} height={134} />
             </div>
-            <DialogTitle id="alert-dialog-title" className={classes.dialogTitle}>
+            <DialogTitle
+              id="alert-dialog-title"
+              className={classes.dtacmodalimagereward_dialogTitle}
+            >
               <Typography align="left">{title}</Typography>
               {closeButton && (
                 <IconButton
                   aria-label="close"
-                  className={classes.closeButton}
+                  className={classes.dtacmodalimagereward_closeButton}
                   onClick={handleClose}
                 >
                   <CloseIcon />
@@ -143,37 +139,55 @@ const DtacModalImageDtacReward: FC<DtacModalImageDtacRewardProps> = (props) => {
               )}
             </DialogTitle>
 
-            <DialogContent className={classes.dialogContent}>
+            <DialogContent className={classes.dtacmodalimagereward_dialogContent}>
               <Grid container>
                 <Grid item xs={4}>
-                  <Typography className={classes.contentTextLeft} align={'left'}>
+                  <Typography
+                    className={classes.dtacmodalimagereward_contentTextLeft}
+                    align={'left'}
+                  >
                     {'Earned:'}
                   </Typography>
                 </Grid>
                 <Grid item xs={8}>
-                  <Typography className={classes.contentTextRight} align={'right'}>
+                  <Typography
+                    className={classes.dtacmodalimagereward_contentTextRight}
+                    align={'right'}
+                  >
                     {'00'}
                   </Typography>
                 </Grid>
 
-                <Grid item xs={4} className={classes.marginTop16}>
-                  <Typography className={classes.contentTextLeft} align={'left'}>
+                <Grid item xs={4} className={classes.dtacmodalimagereward_marginTop16}>
+                  <Typography
+                    className={classes.dtacmodalimagereward_contentTextLeft}
+                    align={'left'}
+                  >
                     {'Date:'}
                   </Typography>
                 </Grid>
-                <Grid item xs={8} className={classes.marginTop16}>
-                  <Typography className={classes.contentTextRight} align={'right'}>
+                <Grid item xs={8} className={classes.dtacmodalimagereward_marginTop16}>
+                  <Typography
+                    className={classes.dtacmodalimagereward_contentTextRight}
+                    align={'right'}
+                  >
                     {'00-00-0000  00:00'}
                   </Typography>
                 </Grid>
 
-                <Grid item xs={12} className={classes.marginTop16}>
-                  <Typography className={classes.contentTextLeft} align={'left'}>
+                <Grid item xs={12} className={classes.dtacmodalimagereward_marginTop16}>
+                  <Typography
+                    className={classes.dtacmodalimagereward_contentTextLeft}
+                    align={'left'}
+                  >
                     {'Lorem ipsum:'}
                   </Typography>
                 </Grid>
                 <Grid item xs={12}>
-                  <Typography className={classes.contentTextRight} align={'left'}>
+                  <Typography
+                    className={classes.dtacmodalimagereward_contentTextRight}
+                    align={'left'}
+                  >
                     {
                       'Lorem ipsum dolor sit amet Tempus id sed scelerisque dictum dignissim pellentesque consequat. Malesuada a'
                     }
@@ -182,7 +196,7 @@ const DtacModalImageDtacReward: FC<DtacModalImageDtacRewardProps> = (props) => {
               </Grid>
             </DialogContent>
 
-            <DialogActions className={classes.dialogActionRoot}>
+            <DialogActions className={classes.dtacmodalimagereward_dialogActionRoot}>
               <Button variant="contained" onClick={onClickPositive} fullWidth>
                 {submitName}
               </Button>

@@ -1,5 +1,4 @@
 import React, { FC, useEffect } from 'react'
-// import Image from 'next/image'
 import Dialog from '@material-ui/core/Dialog'
 import { DialogProps } from '@material-ui/core/Dialog/Dialog'
 import DialogActions from '@material-ui/core/DialogActions'
@@ -13,25 +12,25 @@ import Button from '../Button'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    dialog_dialogContent: {
+    dtacmodal_dialogContent: {
       padding: '0px 16px',
       textAlign: 'center',
     },
-    dialog_closeButton: {
+    dtacmodal_closeButton: {
       position: 'absolute',
       right: theme.spacing(1),
       top: theme.spacing(1),
       color: theme.palette.grey[500],
     },
-    dialog_dialogTitle: {
+    dtacmodal_dialogTitle: {
       padding: '24px 16px 12px',
     },
-    dialog_contentText: {
+    dtacmodal_contentText: {
       fontSize: 14,
       fontWeight: 300,
       letterSpacing: 0,
     },
-    dialog_dialogActionRoot: {
+    dtacmodal_dialogActionRoot: {
       padding: 24,
       '& > Button:not(:first-child)': {
         marginLeft: 16,
@@ -101,12 +100,12 @@ const Modal: FC<ModalProps> = (props) => {
           children
         ) : (
           <>
-            <DialogTitle id="alert-dialog-title" className={classes.dialog_dialogTitle}>
+            <DialogTitle id="alert-dialog-title" className={classes.dtacmodal_dialogTitle}>
               <Typography align="center">{title}</Typography>
               {closeButton && (
                 <IconButton
                   aria-label="close"
-                  className={classes.dialog_closeButton}
+                  className={classes.dtacmodal_closeButton}
                   onClick={handleClose}
                 >
                   <CloseIcon />
@@ -114,17 +113,17 @@ const Modal: FC<ModalProps> = (props) => {
               )}
             </DialogTitle>
 
-            <DialogContent className={classes.dialog_dialogContent}>
+            <DialogContent className={classes.dtacmodal_dialogContent}>
               {srcPath && (
                 <div>{/* <Image unoptimized src={srcPath} width={30} height={30} /> */}</div>
               )}
 
-              <Typography className={classes.dialog_contentText} align={align}>
+              <Typography className={classes.dtacmodal_contentText} align={align}>
                 {description}
               </Typography>
             </DialogContent>
 
-            <DialogActions className={classes.dialog_dialogActionRoot}>
+            <DialogActions className={classes.dtacmodal_dialogActionRoot}>
               {cancelName && (
                 <Button onClick={onClickNegative} fullWidth>
                   {cancelName}

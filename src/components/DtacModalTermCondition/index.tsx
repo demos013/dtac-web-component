@@ -12,26 +12,25 @@ import Button from '../Button'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    root: {},
-    dialogContent: {
+    dtacmodaltermcond_dialogContent: {
       padding: '0px 16px',
       textAlign: 'center',
     },
-    closeButton: {
+    dtacmodaltermcond_closeButton: {
       position: 'absolute',
       right: theme.spacing(1),
       top: theme.spacing(1),
       color: theme.palette.grey[500],
     },
-    dialogTitle: {
+    dtacmodaltermcond_dialogTitle: {
       padding: '24px 16px 12px',
     },
-    contentText: {
+    dtacmodaltermcond_contentText: {
       fontSize: 14,
       fontWeight: 300,
       letterSpacing: 0,
     },
-    dialogActionRoot: {
+    dtacmodaltermcond_dialogActionRoot: {
       padding: 24,
       '& > Button:not(:first-child)': {
         marginLeft: 16,
@@ -44,7 +43,7 @@ const useStyles = makeStyles((theme: Theme) =>
         },
       },
     },
-    descriptionWrapper: {
+    dtacmodaltermcond_descriptionWrapper: {
       padding: 16,
       background: '#FFFFFF',
       boxShadow: 'inset 0px 0.5px 4px rgb(0 0 0 / 30%)',
@@ -72,7 +71,6 @@ const DtacModalTermCondition: FC<DtacModalTermConditionProps> = (props) => {
     onClose,
     onClickPositive,
     closeButton = false,
-    children,
     title,
     description,
     submitName,
@@ -86,42 +84,34 @@ const DtacModalTermCondition: FC<DtacModalTermConditionProps> = (props) => {
     }
   }
   return (
-    <>
-      <Dialog open={open} onClose={handleClose} maxWidth={maxWidth} fullWidth={fullWidth}>
-        {children ? (
-          children
-        ) : (
-          <>
-            <DialogTitle id="alert-dialog-title" className={classes.dialogTitle}>
-              <Typography align="left">{title}</Typography>
-              {closeButton && (
-                <IconButton
-                  aria-label="close"
-                  className={classes.closeButton}
-                  onClick={handleClose}
-                >
-                  <CloseIcon />
-                </IconButton>
-              )}
-            </DialogTitle>
-
-            <DialogContent className={classes.dialogContent}>
-              <div className={classes.descriptionWrapper}>
-                <Typography className={classes.contentText} align="left">
-                  {description}
-                </Typography>
-              </div>
-            </DialogContent>
-
-            <DialogActions className={classes.dialogActionRoot}>
-              <Button variant="contained" onClick={onClickPositive} fullWidth>
-                {submitName}
-              </Button>
-            </DialogActions>
-          </>
+    <Dialog open={open} onClose={handleClose} maxWidth={maxWidth} fullWidth={fullWidth}>
+      <DialogTitle id="alert-dialog-title" className={classes.dtacmodaltermcond_dialogTitle}>
+        <Typography align="left">{title}</Typography>
+        {closeButton && (
+          <IconButton
+            aria-label="close"
+            className={classes.dtacmodaltermcond_closeButton}
+            onClick={handleClose}
+          >
+            <CloseIcon />
+          </IconButton>
         )}
-      </Dialog>
-    </>
+      </DialogTitle>
+
+      <DialogContent className={classes.dtacmodaltermcond_dialogContent}>
+        <div className={classes.dtacmodaltermcond_descriptionWrapper}>
+          <Typography className={classes.dtacmodaltermcond_contentText} align="left">
+            {description}
+          </Typography>
+        </div>
+      </DialogContent>
+
+      <DialogActions className={classes.dtacmodaltermcond_dialogActionRoot}>
+        <Button variant="contained" onClick={onClickPositive} fullWidth>
+          {submitName}
+        </Button>
+      </DialogActions>
+    </Dialog>
   )
 }
 

@@ -12,25 +12,24 @@ import Button from '../Button'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    root: {},
-    dialogContent: {
+    dtacmodalnongtud_dialogContent: {
       padding: '0px 16px',
     },
-    closeButton: {
+    dtacmodalnongtud_closeButton: {
       position: 'absolute',
       right: theme.spacing(1),
       top: theme.spacing(1),
       color: theme.palette.grey[500],
     },
-    dialogTitle: {
+    dtacmodalnongtud_dialogTitle: {
       padding: '44px 16px 12px',
     },
-    contentText: {
+    dtacmodalnongtud_contentText: {
       fontSize: 14,
       fontWeight: 300,
       letterSpacing: 0,
     },
-    dialogActionRoot: {
+    dtacmodalnongtud_dialogActionRoot: {
       padding: 24,
       '& > Button:not(:first-child)': {
         marginLeft: 16,
@@ -43,7 +42,7 @@ const useStyles = makeStyles((theme: Theme) =>
         },
       },
     },
-    tuadeeWrapper: {
+    dtacmodalnongtud_tuadeeWrapper: {
       position: 'fixed',
       top: -12,
 
@@ -77,7 +76,6 @@ const DtacModalNongTuaD: FC<DtacModalNongTuaDProps> = (props) => {
     onClickNegative,
     onClickPositive,
     closeButton = false,
-    children,
     title,
     description = 'Copy goes here',
     submitName,
@@ -104,44 +102,38 @@ const DtacModalNongTuaD: FC<DtacModalNongTuaDProps> = (props) => {
   return (
     <>
       <Dialog open={open} onClose={handleClose} maxWidth={maxWidth} fullWidth={fullWidth}>
-        {children ? (
-          children
-        ) : (
-          <>
-            <div className={classes.tuadeeWrapper}>
-              <img src={'/images/nongtuadee_sorry.svg'} width={85} height={85}></img>
-            </div>
-            <DialogTitle id="alert-dialog-title" className={classes.dialogTitle}>
-              <Typography align="center">{title}</Typography>
-              {closeButton && (
-                <IconButton
-                  aria-label="close"
-                  className={classes.closeButton}
-                  onClick={handleClose}
-                >
-                  <CloseIcon />
-                </IconButton>
-              )}
-            </DialogTitle>
+        <div className={classes.dtacmodalnongtud_tuadeeWrapper}>
+          <img src={'/images/nongtuadee_sorry.svg'} width={85} height={85}></img>
+        </div>
+        <DialogTitle id="alert-dialog-title" className={classes.dtacmodalnongtud_dialogTitle}>
+          <Typography align="center">{title}</Typography>
+          {closeButton && (
+            <IconButton
+              aria-label="close"
+              className={classes.dtacmodalnongtud_closeButton}
+              onClick={handleClose}
+            >
+              <CloseIcon />
+            </IconButton>
+          )}
+        </DialogTitle>
 
-            <DialogContent className={classes.dialogContent}>
-              <Typography className={classes.contentText} align={align}>
-                {description}
-              </Typography>
-            </DialogContent>
+        <DialogContent className={classes.dtacmodalnongtud_dialogContent}>
+          <Typography className={classes.dtacmodalnongtud_contentText} align={align}>
+            {description}
+          </Typography>
+        </DialogContent>
 
-            <DialogActions className={classes.dialogActionRoot}>
-              {cancelName && (
-                <Button onClick={onClickNegative} fullWidth>
-                  {cancelName}
-                </Button>
-              )}
-              <Button variant="contained" onClick={onClickPositive} fullWidth>
-                {submitName}
-              </Button>
-            </DialogActions>
-          </>
-        )}
+        <DialogActions className={classes.dtacmodalnongtud_dialogActionRoot}>
+          {cancelName && (
+            <Button onClick={onClickNegative} fullWidth>
+              {cancelName}
+            </Button>
+          )}
+          <Button variant="contained" onClick={onClickPositive} fullWidth>
+            {submitName}
+          </Button>
+        </DialogActions>
       </Dialog>
     </>
   )

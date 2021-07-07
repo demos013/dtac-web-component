@@ -12,19 +12,19 @@ import Button from '../Button'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    dialogContent: {
+    dtacmodalotp_dialogContent: {
       padding: '0px 16px',
       textAlign: 'center',
     },
-    dialogTitle: {
+    dtacmodalotp_dialogTitle: {
       padding: '24px 16px 12px',
     },
-    contentText: {
+    dtacmodalotp_contentText: {
       fontSize: 14,
       fontWeight: 300,
       letterSpacing: 0,
     },
-    dialogActionRoot: {
+    dtacmodalotp_dialogActionRoot: {
       padding: 24,
       display: 'flex',
       justifyContent: 'center',
@@ -40,16 +40,16 @@ const useStyles = makeStyles((theme: Theme) =>
         },
       },
     },
-    resentOtp: {
+    dtacmodalotp_resentOtp: {
       color: '#007AD0',
       fontSize: 14,
       fontWeight: 700,
       letterSpacing: '0em',
     },
-    resentOtpWrapper: {
+    dtacmodalotp_resentOtpWrapper: {
       display: 'flex',
     },
-    input: {
+    dtacmodalotp_input: {
       margin: theme.spacing(1),
       width: 40,
     },
@@ -86,7 +86,10 @@ const DtacModalOtp: FC<DtacModalOtpProps> = (props) => {
   const [otp, setOtp] = useState(new Array(4).fill(''))
   const inputRefs: any = []
 
-  const handleKeyPress = (element: React.KeyboardEvent<HTMLDivElement>, index: number) => {
+  const handleKeyPress = (
+    element: React.KeyboardEvent<HTMLDivElement>,
+    index: number,
+  ): void | boolean => {
     if (element.code !== 'Backspace') {
       if (isNaN(+element.key)) return false
       setOtp([...otp.map((d, idx) => (idx === index ? element.key : d))])
@@ -129,12 +132,12 @@ const DtacModalOtp: FC<DtacModalOtpProps> = (props) => {
           children
         ) : (
           <>
-            <DialogTitle id="alert-dialog-title" className={classes.dialogTitle}>
+            <DialogTitle id="alert-dialog-title" className={classes.dtacmodalotp_dialogTitle}>
               <Typography align="left">{title}</Typography>
             </DialogTitle>
 
-            <DialogContent className={classes.dialogContent}>
-              <Typography className={classes.contentText} align="left">
+            <DialogContent className={classes.dtacmodalotp_dialogContent}>
+              <Typography className={classes.dtacmodalotp_contentText} align="left">
                 {description}
               </Typography>
 
@@ -148,7 +151,7 @@ const DtacModalOtp: FC<DtacModalOtpProps> = (props) => {
                       style: { textAlign: 'center' },
                     }}
                     inputRef={(ref) => inputRefs.push(ref)}
-                    className={classes.input}
+                    className={classes.dtacmodalotp_input}
                     key={index.toString()}
                     value={data}
                     // onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleChange(e, index)}
@@ -160,21 +163,21 @@ const DtacModalOtp: FC<DtacModalOtpProps> = (props) => {
                 )
               })}
 
-              <Typography className={classes.contentText} align="left">
+              <Typography className={classes.dtacmodalotp_contentText} align="left">
                 {'OTP will be valid for 15 mins'}
               </Typography>
 
-              <div className={classes.resentOtpWrapper}>
-                <Typography className={classes.contentText} align="left">
+              <div className={classes.dtacmodalotp_resentOtpWrapper}>
+                <Typography className={classes.dtacmodalotp_contentText} align="left">
                   {'Didn’t receive OTP code?'}
                 </Typography>
-                <Typography className={classes.resentOtp} align="left">
+                <Typography className={classes.dtacmodalotp_resentOtp} align="left">
                   {'Re-send OTP'}
                 </Typography>
               </div>
             </DialogContent>
 
-            <DialogActions className={classes.dialogActionRoot}>
+            <DialogActions className={classes.dtacmodalotp_dialogActionRoot}>
               {cancelName && (
                 <Button onClick={onClickNegative} fullWidth>
                   {cancelName}
