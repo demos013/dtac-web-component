@@ -54,6 +54,14 @@ const useStyles = makeStyles((theme: Theme) =>
     tuadeeWrapper: {
       position: 'fixed',
       top: 0,
+      [theme.breakpoints.up(320)]: {
+        display: 'fixed',
+        top: 32,
+      },
+      [theme.breakpoints.up(600)]: {
+        display: 'fixed',
+        top: 64,
+      },
 
       /** To make icon align center */
       left: 'calc(50% - 100px)',
