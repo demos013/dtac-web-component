@@ -14,29 +14,28 @@ import Button from '../Button'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    root: {},
-    dialogContent: {
+    dtacmodalformfield_dialogContent: {
       padding: '0px 16px',
       textAlign: 'center',
       ' .MuiDialogContent-root': {
         overflowY: 'hidden',
       },
     },
-    closeButton: {
+    dtacmodalformfield_closeButton: {
       position: 'absolute',
       right: theme.spacing(1),
       top: theme.spacing(1),
       color: theme.palette.grey[500],
     },
-    dialogTitle: {
+    dtacmodalformfield_dialogTitle: {
       padding: '24px 16px 12px',
     },
-    description: {
+    dtacmodalformfield_description: {
       fontSize: 14,
       fontWeight: 400,
       letterSpacing: 0,
     },
-    dialogActionRoot: {
+    dtacmodalformfield_dialogActionRoot: {
       display: 'flex',
       justifyContent: 'center',
       padding: 24,
@@ -44,18 +43,18 @@ const useStyles = makeStyles((theme: Theme) =>
         marginLeft: 16,
       },
     },
-    titleForm: {
+    dtacmodalformfield_titleForm: {
       color: '#767676',
       fontSize: 16,
       fontWeight: 300,
     },
-    textField: {
+    dtacmodalformfield_textField: {
       '& .MuiInputBase-root': {
         height: 40,
         fontSize: 16,
       },
     },
-    formWrapper: {
+    dtacmodalformfield_formWrapper: {
       textAlign: 'left',
       marginTop: 22,
     },
@@ -110,14 +109,14 @@ const DtacModalFormField: FC<DtacModalFormFieldProps> = (props) => {
           children
         ) : (
           <>
-            <DialogTitle id="alert-dialog-title" className={classes.dialogTitle}>
+            <DialogTitle id="alert-dialog-title" className={classes.dtacmodalformfield_dialogTitle}>
               <Typography align="center" className={classes.dtacmodalformfield_title}>
                 {title}
               </Typography>
               {closeButton && (
                 <IconButton
                   aria-label="close"
-                  className={classes.closeButton}
+                  className={classes.dtacmodalformfield_closeButton}
                   onClick={handleClose}
                 >
                   <CloseIcon />
@@ -125,33 +124,33 @@ const DtacModalFormField: FC<DtacModalFormFieldProps> = (props) => {
               )}
             </DialogTitle>
 
-            <DialogContent className={classes.dialogContent}>
+            <DialogContent className={classes.dtacmodalformfield_dialogContent}>
               {srcPath && (
                 <div>
                   <img src={srcPath} width={30} height={30} />
                 </div>
               )}
 
-              <Typography className={classes.description} align={align}>
+              <Typography className={classes.dtacmodalformfield_description} align={align}>
                 {description}
               </Typography>
 
-              <div className={classes.formWrapper}>
-                <Typography className={clsx(classes.titleForm)}>
+              <div className={classes.dtacmodalformfield_formWrapper}>
+                <Typography className={clsx(classes.dtacmodalformfield_titleForm)}>
                   {'Type your account name'}
                 </Typography>
                 <form noValidate autoComplete="off">
                   <TextField
                     id="outlined-basic"
                     variant="outlined"
-                    className={classes.textField}
+                    className={classes.dtacmodalformfield_textField}
                     placeholder={'Account number'}
                   />
                 </form>
               </div>
             </DialogContent>
 
-            <DialogActions className={classes.dialogActionRoot}>
+            <DialogActions className={classes.dtacmodalformfield_dialogActionRoot}>
               <Button variant="contained" onClick={onClickPositive} fullWidth disabled>
                 {submitName}
               </Button>
