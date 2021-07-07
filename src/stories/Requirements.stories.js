@@ -7,6 +7,7 @@ import DtacModalFormField from '../components/DtacModalFormField'
 import DtacModalOtp from '../components/DtacModalOtp'
 import DtacModalTermCondition from '../components/DtacModalTermCondition'
 import DtacModalNongTuaD from '../components/DtacModalNongTuaD'
+import DtacModalImageDtacReward from '../components/DtacModalImageDtacReward'
 import './styles.css'
 
 const stories = storiesOf('Modal', module)
@@ -71,6 +72,24 @@ stories.add('DtacModalNongTuaD', () => {
   return (
     <div>
       <DtacModalNongTuaD
+        open
+        title={'Term and Condition'}
+        description={description}
+        submitName={'okay'}
+        fullWidth={true}
+        maxWidth={'xs'}
+      />
+    </div>
+  )
+})
+
+stories.add('DtacModalImageDtacReward', () => {
+  const description =
+    '• Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit aliquet elementum nibh. • Tempus id sed scelerisque dictum dignissim pellentesque consequat. Malesuada ac, est. • Tempus id sed scelerisque dictum dignissim pellentesque consequat. Malesuada ac, est. • Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit aliquet elementum nibh. • Tempus id sed scelerisque dictum dignissim pellentesque consequat. Malesuada ac, est. • Tempus id sed scelerisque dictum dignissim pellentesque consequat. Malesuada ac, est.'
+
+  return (
+    <div>
+      <DtacModalImageDtacReward
         open
         title={'Term and Condition'}
         description={description}
