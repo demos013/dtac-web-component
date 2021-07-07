@@ -115,7 +115,9 @@ const Modal: FC<ModalProps> = (props) => {
 
             <DialogContent className={classes.dtacmodal_dialogContent}>
               {srcPath && (
-                <div>{/* <Image unoptimized src={srcPath} width={30} height={30} /> */}</div>
+                <div>
+                  <img src={srcPath} width={30} height={30} />
+                </div>
               )}
 
               <Typography className={classes.dtacmodal_contentText} align={align}>
