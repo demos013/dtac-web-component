@@ -95,7 +95,7 @@ const DtacModalFormField: FC<DtacModalFormFieldProps> = (props) => {
     description = 'Copy goes here',
     submitName,
     // cancelName,
-    // srcPath,
+    srcPath,
     fullWidth = false,
     maxWidth = false,
     align = 'center',
@@ -127,11 +127,11 @@ const DtacModalFormField: FC<DtacModalFormFieldProps> = (props) => {
             </DialogTitle>
 
             <DialogContent className={classes.dialogContent}>
-              {/* {srcPath && (
+              {srcPath && (
                 <div>
-                  <Image unoptimized src={srcPath} width={30} height={30} placeholder="blur" />
+                  <img src={srcPath} width={30} height={30} />
                 </div>
-              )} */}
+              )}
 
               <Typography className={classes.contentText} align={align}>
                 {description}
