@@ -1,14 +1,5 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "components/*": [
-        "./src/components/*"
-      ],
-      "images/*": [
-        "./public/images/*"
-      ],
-    },
     "strict": true,
     "allowUnreachableCode": false,
     "allowSyntheticDefaultImports": true,
@@ -46,15 +37,14 @@
     ],
   },
   "include": [
-    "src/**/*.ts",
-    "src/**/*.tsx",
-    "src/**/*.stories.js",
-    "src/**/*.js",
+    "**/*.ts",
+    "**/*.tsx",
+    "./src/**/*.stories.js",
+    "./src/**/*.js",
   ],
   "exclude": [
     "node_modules",
     ".eslintrc.js",
     "rollup.config.js",
-    "src/**/*.stories.tsx"
   ]
 }
