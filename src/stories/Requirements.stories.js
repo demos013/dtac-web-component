@@ -84,6 +84,8 @@ stories.add('DtacModalOtp', () => {
         description={'Your OTP code has been sent via sms to 000-000-0000'}
         submitName={'Buy'}
         cancelName={'cancel'}
+        // disable
+        // error
       />
     </div>
   )

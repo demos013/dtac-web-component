@@ -53,6 +53,39 @@ const useStyles = makeStyles((theme: Theme) =>
     dtacmodalotp_input: {
       margin: theme.spacing(1),
       width: 40,
+
+      '& .MuiInput-underline:before': {
+        left: 0,
+        right: 0,
+        bottom: 0,
+        content: '',
+        position: 'absolute',
+        transition: 'border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms',
+        borderBottom: '3px solid #D6D6D6',
+        pointerEvents: 'none',
+      },
+
+      '& .MuiInput-underline:after': {
+        left: 0,
+        right: 0,
+        bottom: 0,
+        content: '',
+        position: 'absolute',
+        transition: 'border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms',
+        borderBottom: '3px solid #D6D6D6',
+        pointerEvents: 'none',
+      },
+
+      '& .MuiInput-underline.Mui-disabled:before': {
+        left: 0,
+        right: 0,
+        bottom: 0,
+        content: '',
+        position: 'absolute',
+        transition: 'border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms',
+        borderBottom: '3px solid #D6D6D6',
+        pointerEvents: 'none',
+      },
     },
     dtacmodalotp_title: {
       fontSize: 16,
@@ -69,6 +102,11 @@ const useStyles = makeStyles((theme: Theme) =>
     dtacmodalotp_topgap8: {
       marginTop: 8,
     },
+    dtacmodalotp_helpertext: {
+      color: '#F03D46',
+      fontSize: 14,
+      fontWeight: 500,
+    },
   }),
 )
 
@@ -77,6 +115,8 @@ interface DtacModalOtpProps extends DialogProps {
   description?: string
   cancelName?: string
   submitName?: string
+  error?: boolean
+  disable?: boolean
   onClose?: () => void
   onClickNegative?: () => void
   onClickPositive?: () => void
@@ -91,9 +131,11 @@ const DtacModalOtp: FC<DtacModalOtpProps> = (props) => {
     onClickPositive,
     children,
     title,
+    error = false,
     description = 'Copy goes here',
     submitName,
     cancelName,
+    disable = false,
     fullWidth = false,
     maxWidth = false,
   } = props
@@ -177,9 +219,19 @@ const DtacModalOtp: FC<DtacModalOtpProps> = (props) => {
                     onKeyDown={(ev) => {
                       handleKeyPress(ev, index)
                     }}
+                    error={error}
+                    disabled={disable}
                   />
                 )
               })}
+
+              {error && (
+                <div>
+                  <Typography className={classes.dtacmodalotp_helpertext} align="center">
+                    {'Error! Wrong OTP, please try again'}
+                  </Typography>
+                </div>
+              )}
 
               <Typography
                 className={clsx(classes.dtacmodalotp_contentText, classes.dtacmodalotp_topgap8)}
