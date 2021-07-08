@@ -36,6 +36,7 @@ const useStyles = makeStyles((theme: Theme) =>
       fontWeight: 700,
       letterSpacing: 0,
       color: '#000000',
+      marginLeft: 8,
     },
     dtacmodalimagereward_dialogActionRoot: {
       padding: 24,
@@ -70,6 +71,10 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     dtacmodalimagereward_marginTop16: {
       marginTop: 16,
+    },
+    gridCoin: {
+      display: 'flex',
+      justifyContent: 'flex-end',
     },
   }),
 )
@@ -149,7 +154,8 @@ const DtacModalImageDtacReward: FC<DtacModalImageDtacRewardProps> = (props) => {
                     {'Earned:'}
                   </Typography>
                 </Grid>
-                <Grid item xs={8}>
+                <Grid item xs={8} className={classes.gridCoin}>
+                  <img src={'/images/coin_icon.png'} width={20} height={20} />
                   <Typography
                     className={classes.dtacmodalimagereward_contentTextRight}
                     align={'right'}
