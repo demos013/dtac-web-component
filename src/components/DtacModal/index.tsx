@@ -35,8 +35,9 @@ const useStyles = makeStyles((theme: Theme) =>
       '& > Button:not(:first-child)': {
         marginLeft: 16,
       },
-      [theme.breakpoints.down('xs')]: {
+      [theme.breakpoints.down(360)]: {
         display: 'block',
+        textAlign: 'center',
         '& > Button:not(:first-child)': {
           marginLeft: 0,
           marginTop: 16,
@@ -46,10 +47,10 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 )
 
-interface ModalProps extends DialogProps {
+interface DtacModalProps extends DialogProps {
   timer?: number
   title: string
-  description?: string
+  description: string
   cancelName?: string
   submitName: string
   closeButton?: boolean
@@ -60,7 +61,7 @@ interface ModalProps extends DialogProps {
   onClickPositive?: () => void
 }
 
-const Modal: FC<ModalProps> = (props) => {
+const DtacModal: FC<DtacModalProps> = (props) => {
   const classes = useStyles()
   const {
     open,
@@ -70,7 +71,7 @@ const Modal: FC<ModalProps> = (props) => {
     closeButton = false,
     children,
     title,
-    description = 'Copy goes here',
+    description,
     submitName,
     cancelName,
     srcPath,
@@ -142,4 +143,4 @@ const Modal: FC<ModalProps> = (props) => {
   )
 }
 
-export default Modal
+export default DtacModal
