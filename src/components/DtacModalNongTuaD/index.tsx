@@ -60,6 +60,8 @@ const useStyles = makeStyles((theme: Theme) =>
       '& > div': {
         position: 'fixed !important',
       },
+      
+      /** NEED TO ADJUST SIZE LATER */
       [theme.breakpoints.down(390)]: {
         top: 'calc(50% - 12rem)',
       },
