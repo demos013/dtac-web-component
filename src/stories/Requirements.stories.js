@@ -1,5 +1,5 @@
 import { storiesOf } from '@storybook/react'
-import React from 'react'
+import React, { useMemo } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import Button from '../components/Button'
 import Modal from '../components/DtacModal'
@@ -10,6 +10,8 @@ import DtacModalNongTuaD from '../components/DtacModalNongTuaD'
 import DtacModalImageDtacReward from '../components/DtacModalImageDtacReward'
 import './styles.css'
 import DtacModal from '../components/DtacModal'
+import { Typography } from '@material-ui/core'
+import TextField from '@material-ui/core/TextField/TextField'
 
 const stories = storiesOf('Modal', module)
 
@@ -156,6 +158,44 @@ stories.add('DtacModalImageDtacReward', () => {
         fullWidth={true}
         maxWidth={'xs'}
       />
+    </div>
+  )
+})
+
+stories.add('DtacModalChildren', () => {
+  const personalInterface = useMemo(() => {
+    return (
+      <div style={{ padding: 16 }}>
+        <div>
+          <Typography>{'Specify balance:'}</Typography>
+          <Typography>{'533.50 Baht'}</Typography>
+          <Typography>{'Due date: 22-Jan-2021 (Overdue)'}</Typography>
+        </div>
+
+        <div style={{ marginTop: 16 }}>
+          <Typography>{'Pay specific amount'}</Typography>
+          <form noValidate autoComplete="off">
+            <TextField
+              id="outlined-basic"
+              variant="outlined"
+              placeholder={'00'}
+              style={{
+                fontSize: 16,
+              }}
+            />
+          </form>
+        </div>
+
+        <div style={{ marginTop: 16, display: 'flex', justifyContent: 'center' }}>
+          <Button disabled>{'save'}</Button>
+        </div>
+      </div>
+    )
+  }, [])
+
+  return (
+    <div>
+      <DtacModal open>{personalInterface} </DtacModal>
     </div>
   )
 })
