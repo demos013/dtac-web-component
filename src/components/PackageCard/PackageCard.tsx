@@ -5,7 +5,11 @@ import { PackageCardBaseProps, PackageCardItemProps } from './package-card'
 import Item from './PackageCardItem'
 
 const useStyles = makeStyles({
-  packagecard_root: {},
+  packagecard_root: {
+    '& > div > p': {
+      fontWeight: 700,
+    },
+  },
 })
 
 const PackageCard: FC<PackageCardBaseProps> & {
@@ -16,7 +20,7 @@ const PackageCard: FC<PackageCardBaseProps> & {
     align,
     onClick = () => {},
     className,
-    headerBackgroundColor = '#E7EEF4',
+    headerBackgroundColor,
     saleTag = false,
     items,
     rightBottom,
@@ -28,9 +32,9 @@ const PackageCard: FC<PackageCardBaseProps> & {
   const classes = useStyles()
   return (
     <PackageCardBase
-      // className={classes.packagecard_root}
+      className={classes.packagecard_root}
       header={header}
-      //   headerBackgroundColor={headerBackgroundColor}
+      headerBackgroundColor={headerBackgroundColor}
       rightBottom={rightBottom}
       leftBottom={leftBottom}
       expands={expands}

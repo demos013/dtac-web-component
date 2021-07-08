@@ -2,7 +2,8 @@ import Grid from '@material-ui/core/Grid'
 import { makeStyles } from '@material-ui/core/styles'
 import React, { FC } from 'react'
 import PackageCardBase from './index'
-import { PackageCardBaseProps, SummaryCardItemProps } from './package-card'
+import { PackageCardBaseProps, PackageCardItemProps, SummaryCardItemProps } from './package-card'
+import PackageCardItem from './PackageCardItem'
 import SummaryCardItem from './SummaryCardItem'
 const useStyles = makeStyles({
   summarycard_root: {
@@ -14,7 +15,8 @@ const useStyles = makeStyles({
 })
 
 const SummaryCard: FC<PackageCardBaseProps> & {
-  Item?: React.FunctionComponent<SummaryCardItemProps>
+  Item?: FC<SummaryCardItemProps>
+  ExpandItem?: FC<PackageCardItemProps>
 } = (props) => {
   const {
     header,
@@ -52,4 +54,5 @@ const SummaryCard: FC<PackageCardBaseProps> & {
 }
 
 SummaryCard.Item = SummaryCardItem
+SummaryCard.ExpandItem = PackageCardItem
 export default SummaryCard

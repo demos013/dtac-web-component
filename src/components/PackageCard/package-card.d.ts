@@ -29,12 +29,14 @@ export interface PackageCardBaseProps {
 
 export interface SummaryCardItemProps {
   icon: string
+  iconColor?: stirng | undefined
   upperText: string
   lowerText: string
 }
 
 export interface PackageCardItemProps {
   icon?: string | undefined
+  iconColor?: stirng | undefined
   primaryText?: string | undefined
   text?: string | undefined
 }

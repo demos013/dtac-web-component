@@ -41,13 +41,13 @@ const useStyles = makeStyles<Theme, StyleProps>((theme: Theme) =>
       textAlign: 'left',
     },
     packagecard_base_fontSize12: {
-      fontSize: 12,
+      fontSize: '12px !important',
     },
     packagecard_base_fontSize14: {
-      fontSize: 14,
+      fontSize: '14px !important',
     },
     packagecard_base_fontSize44: {
-      fontSize: 44,
+      fontSize: '44px !important',
     },
     packagecard_base_bold: {
       fontWeight: 700,

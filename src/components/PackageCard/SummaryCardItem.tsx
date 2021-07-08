@@ -13,7 +13,7 @@ const useStyles = makeStyles({
     textAlign: 'left',
   },
   summarycard_item_fontSize12: {
-    fontSize: 12,
+    fontSize: 11,
   },
   summarycard_item_fontSize14: {
     fontSize: 14,
