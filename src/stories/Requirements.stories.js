@@ -81,7 +81,7 @@ stories.add('DtacModalTermCondition', () => {
 
 stories.add('DtacModalNongTuaD', () => {
   const description =
-    'Lorem ipsum Sorry unable to do the transaction now Sorry unable to do the transaction nowSorry unable to do the transaction now Sorry unable to do the transaction now'
+    'Lorem ipsum Sorryorry unable to do the transaction now'
 
   return (
     <div>
@@ -100,8 +100,7 @@ stories.add('DtacModalNongTuaD', () => {
 
 stories.add('DtacModalImageDtacReward', () => {
   const description =
-    '• Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit aliquet elementum nibh. • Tempus id sed scelerisque dictum dignissim pellentesque consequat. Malesuada ac, est. • Tempus id sed scelerisque dictum dignissim pellentesque consequat. Malesuada ac, est. • Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit aliquet elementum nibh. • Tempus id sed scelerisque dictum dignissim pellentesque consequat. Malesuada ac, est. • Tempus id sed scelerisque dictum dignissim pellentesque consequat. Malesuada ac, est.'
-
+    'Lorem ipsum dolor sit amet Tempus id sed scelerisque dictum dignissim pellentesque consequat. Malesuada a'
   return (
     <div>
       <DtacModalImageDtacReward
