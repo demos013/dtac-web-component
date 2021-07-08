@@ -14,6 +14,9 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     dtacmodalnongtud_dialogContent: {
       padding: '0px 16px',
+      '&.MuiDialogContent-root': {
+        paddingTop: '50px',
+      },
     },
     dtacmodalnongtud_closeButton: {
       position: 'absolute',
@@ -29,13 +32,21 @@ const useStyles = makeStyles((theme: Theme) =>
       fontWeight: 300,
       letterSpacing: 0,
     },
-    dtacmodalnongtud_dialogActionRoot: {
+    dtacmodalnongtud_dialogActionRoot1Btn: {
       padding: 24,
+      display: 'flex',
+      justifyContent: 'center',
+    },
+    dtacmodalnongtud_dialogActionRoot2Btn: {
+      padding: 24,
+      display: 'flex',
+      justifyContent: 'center',
       '& > Button:not(:first-child)': {
         marginLeft: 16,
       },
-      [theme.breakpoints.down('xs')]: {
+      [theme.breakpoints.down(390)]: {
         display: 'block',
+        textAlign: 'center',
         '& > Button:not(:first-child)': {
           marginLeft: 0,
           marginTop: 16,
@@ -43,15 +54,25 @@ const useStyles = makeStyles((theme: Theme) =>
       },
     },
     dtacmodalnongtud_tuadeeWrapper: {
+      // position: 'fixed',
+      // // top: -12,
+      // top: 'calc(50% - 10rem)',
       position: 'fixed',
-      // top: -12,
-      top: 'calc(50% - 10rem)',
+      // top: 0,
+
+      margin: '-93px 0 0',
+      zIndex: 999999,
 
       /** To make icon align center */
       left: 'calc(50% - 100px/2.8)',
       '& > div': {
         position: 'fixed !important',
       },
+
+      /** NEED TO ADJUST SIZE LATER */
+      // [theme.breakpoints.down(390)]: {
+      //   top: 'calc(50% - 12rem)',
+      // },
     },
   }),
 )
@@ -105,7 +126,7 @@ const DtacModalNongTuaD: FC<DtacModalNongTuaDProps> = (props) => {
   return (
     <>
       <Dialog open={open} onClose={handleClose} maxWidth={maxWidth} fullWidth={fullWidth}>
-        <div className={classes.dtacmodalnongtud_tuadeeWrapper}>
+        {/* <div className={classes.dtacmodalnongtud_tuadeeWrapper}>
           <img src={srcPath} width={85} height={85}></img>
         </div>
         <DialogTitle id="alert-dialog-title" className={classes.dtacmodalnongtud_dialogTitle}>
@@ -119,15 +140,25 @@ const DtacModalNongTuaD: FC<DtacModalNongTuaDProps> = (props) => {
               <CloseIcon />
             </IconButton>
           )}
-        </DialogTitle>
+        </DialogTitle> */}
 
         <DialogContent className={classes.dtacmodalnongtud_dialogContent}>
+          <div className={classes.dtacmodalnongtud_tuadeeWrapper}>
+            <img src={srcPath} width={85} height={85}></img>
+          </div>
+          <Typography align="center">{title}</Typography>
           <Typography className={classes.dtacmodalnongtud_contentText} align={align}>
             {description}
           </Typography>
         </DialogContent>
 
-        <DialogActions className={classes.dtacmodalnongtud_dialogActionRoot}>
+        <DialogActions
+          className={
+            cancelName
+              ? classes.dtacmodalnongtud_dialogActionRoot2Btn
+              : classes.dtacmodalnongtud_dialogActionRoot1Btn
+          }
+        >
           {cancelName && (
             <Button onClick={onClickNegative} fullWidth>
               {cancelName}

@@ -32,16 +32,8 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     dtacmodaltermcond_dialogActionRoot: {
       padding: 24,
-      '& > Button:not(:first-child)': {
-        marginLeft: 16,
-      },
-      [theme.breakpoints.down('xs')]: {
-        display: 'block',
-        '& > Button:not(:first-child)': {
-          marginLeft: 0,
-          marginTop: 16,
-        },
-      },
+      display: 'flex',
+      justifyContent: 'center',
     },
     dtacmodaltermcond_descriptionWrapper: {
       padding: 16,
@@ -51,6 +43,10 @@ const useStyles = makeStyles((theme: Theme) =>
       maxHeight: 250,
       // responsive here
       overflowY: 'scroll',
+    },
+    dtacmodaltermcond_title: {
+      fontSize: 16,
+      fontWeight: 700,
     },
   }),
 )
@@ -86,7 +82,9 @@ const DtacModalTermCondition: FC<DtacModalTermConditionProps> = (props) => {
   return (
     <Dialog open={open} onClose={handleClose} maxWidth={maxWidth} fullWidth={fullWidth}>
       <DialogTitle id="alert-dialog-title" className={classes.dtacmodaltermcond_dialogTitle}>
-        <Typography align="left">{title}</Typography>
+        <Typography align="left" className={classes.dtacmodaltermcond_title}>
+          {title}
+        </Typography>
         {closeButton && (
           <IconButton
             aria-label="close"

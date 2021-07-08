@@ -15,16 +15,20 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     dtacmodalimagereward_dialogContent: {
       padding: '0px 16px',
+      '&.MuiDialogContent-root': {
+        paddingTop: '70px',
+      },
     },
-    dtacmodalimagereward_closeButton: {
-      position: 'absolute',
-      right: theme.spacing(1),
-      top: theme.spacing(1),
-      color: theme.palette.grey[500],
-    },
-    dtacmodalimagereward_dialogTitle: {
-      padding: '62px 16px 12px',
-    },
+    // dtacmodalimagereward_closeButton: {
+    //   position: 'absolute',
+    //   right: theme.spacing(1),
+    //   top: theme.spacing(1),
+    //   color: theme.palette.grey[500],
+    // },
+
+    // dtacmodalimagereward_dialogTitle: {
+    //   padding: '62px 16px 12px',
+    // },
     dtacmodalimagereward_contentTextLeft: {
       fontSize: 16,
       fontWeight: 300,
@@ -33,13 +37,13 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     dtacmodalimagereward_contentTextRight: {
       fontSize: 16,
-      fontWeight: 300,
+      fontWeight: 700,
       letterSpacing: 0,
       color: '#000000',
       marginLeft: 8,
     },
     dtacmodalimagereward_dialogActionRoot: {
-      padding: 24,
+      padding: '12px 16px',
       display: 'flex',
       justifyContent: 'center',
       '& > Button:not(:first-child)': {
@@ -48,14 +52,17 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     dtacmodalimagereward_tuadeeWrapper: {
       position: 'fixed',
-      top: 0,
+      // top: 0,
+
+      margin: '-138px 0 0',
+      zIndex: 999999,
       [theme.breakpoints.up(320)]: {
-        display: 'fixed',
-        top: 32,
+        // display: 'fixed',
+        // top: 32,
       },
       [theme.breakpoints.up(600)]: {
-        display: 'fixed',
-        top: 64,
+        // display: 'fixed',
+        // top: 64,
       },
 
       /** To make icon align center */
@@ -70,6 +77,14 @@ const useStyles = makeStyles((theme: Theme) =>
     gridCoin: {
       display: 'flex',
       justifyContent: 'flex-end',
+    },
+    dtacmodalimagereward_title: {
+      fontSize: 16,
+      fontWeight: 700,
+    },
+    dtacmodalimagereward_dateTime: {
+      fontSize: 16,
+      fontWeight: 400,
     },
   }),
 )
@@ -91,7 +106,6 @@ const DtacModalImageDtacReward: FC<DtacModalImageDtacRewardProps> = (props) => {
     onClose,
     onClickPositive,
     closeButton = false,
-    children,
     title,
     description = 'Copy goes here',
     submitName,
@@ -116,92 +130,73 @@ const DtacModalImageDtacReward: FC<DtacModalImageDtacRewardProps> = (props) => {
   return (
     <>
       <Dialog open={open} onClose={handleClose} maxWidth={maxWidth} fullWidth={fullWidth}>
-        {children ? (
-          children
-        ) : (
-          <>
-            <div className={classes.dtacmodalimagereward_tuadeeWrapper}>
-              <img src={'/images/rectangle.svg'} width={198} height={134} />
-            </div>
-            <DialogTitle
-              id="alert-dialog-title"
-              className={classes.dtacmodalimagereward_dialogTitle}
+        {/* <div className={classes.dtacmodalimagereward_tuadeeWrapper}>
+          <img src={'/images/rectangle.svg'} width={198} height={134} />
+        </div>
+        <DialogTitle id="alert-dialog-title" className={classes.dtacmodalimagereward_dialogTitle}>
+          <Typography align="left" className={classes.dtacmodalimagereward_title}>
+            {title}
+          </Typography>
+          {closeButton && (
+            <IconButton
+              aria-label="close"
+              className={classes.dtacmodalimagereward_closeButton}
+              onClick={handleClose}
             >
-              <Typography align="left">{title}</Typography>
-              {closeButton && (
-                <IconButton
-                  aria-label="close"
-                  className={classes.dtacmodalimagereward_closeButton}
-                  onClick={handleClose}
-                >
-                  <CloseIcon />
-                </IconButton>
-              )}
-            </DialogTitle>
+              <CloseIcon />
+            </IconButton>
+          )}
+        </DialogTitle> */}
 
-            <DialogContent className={classes.dtacmodalimagereward_dialogContent}>
-              <Grid container>
-                <Grid item xs={4}>
-                  <Typography
-                    className={classes.dtacmodalimagereward_contentTextLeft}
-                    align={'left'}
-                  >
-                    {'Earned:'}
-                  </Typography>
-                </Grid>
-                <Grid item xs={8} className={classes.gridCoin}>
-                  <img src={'/images/coin_icon.png'} width={20} height={20} />
-                  <Typography
-                    className={classes.dtacmodalimagereward_contentTextRight}
-                    align={'right'}
-                  >
-                    {'00'}
-                  </Typography>
-                </Grid>
+        <DialogContent className={classes.dtacmodalimagereward_dialogContent}>
+          <div className={classes.dtacmodalimagereward_tuadeeWrapper}>
+            <img src={'/images/rectangle.svg'} width={198} height={134} />
+          </div>
+          <Typography align="left" className={classes.dtacmodalimagereward_title}>
+            {title}
+          </Typography>
+          <Grid container>
+            <Grid item xs={4}>
+              <Typography className={classes.dtacmodalimagereward_contentTextLeft} align={'left'}>
+                {'Earned:'}
+              </Typography>
+            </Grid>
+            <Grid item xs={8} className={classes.gridCoin}>
+              <img src={'/images/coin_icon.png'} width={20} height={20} />
+              <Typography className={classes.dtacmodalimagereward_contentTextRight} align={'right'}>
+                {'00'}
+              </Typography>
+            </Grid>
 
-                <Grid item xs={4} className={classes.dtacmodalimagereward_marginTop16}>
-                  <Typography
-                    className={classes.dtacmodalimagereward_contentTextLeft}
-                    align={'left'}
-                  >
-                    {'Date:'}
-                  </Typography>
-                </Grid>
-                <Grid item xs={8} className={classes.dtacmodalimagereward_marginTop16}>
-                  <Typography
-                    className={classes.dtacmodalimagereward_contentTextRight}
-                    align={'right'}
-                  >
-                    {'00-00-0000  00:00'}
-                  </Typography>
-                </Grid>
+            <Grid item xs={4} className={classes.dtacmodalimagereward_marginTop16}>
+              <Typography className={classes.dtacmodalimagereward_contentTextLeft} align={'left'}>
+                {'Date:'}
+              </Typography>
+            </Grid>
+            <Grid item xs={8} className={classes.dtacmodalimagereward_marginTop16}>
+              <Typography className={classes.dtacmodalimagereward_dateTime} align={'right'}>
+                {'00-00-0000  00:00'}
+              </Typography>
+            </Grid>
 
-                <Grid item xs={12} className={classes.dtacmodalimagereward_marginTop16}>
-                  <Typography
-                    className={classes.dtacmodalimagereward_contentTextLeft}
-                    align={'left'}
-                  >
-                    {'Lorem ipsum:'}
-                  </Typography>
-                </Grid>
-                <Grid item xs={12}>
-                  <Typography
-                    className={classes.dtacmodalimagereward_contentTextRight}
-                    align={'left'}
-                  >
-                    {description}
-                  </Typography>
-                </Grid>
-              </Grid>
-            </DialogContent>
+            <Grid item xs={12} className={classes.dtacmodalimagereward_marginTop16}>
+              <Typography className={classes.dtacmodalimagereward_contentTextLeft} align={'left'}>
+                {'Lorem ipsum:'}
+              </Typography>
+            </Grid>
+            <Grid item xs={12}>
+              <Typography className={classes.dtacmodalimagereward_dateTime} align={'left'}>
+                {description}
+              </Typography>
+            </Grid>
+          </Grid>
+        </DialogContent>
 
-            <DialogActions className={classes.dtacmodalimagereward_dialogActionRoot}>
-              <Button variant="contained" onClick={onClickPositive} fullWidth>
-                {submitName}
-              </Button>
-            </DialogActions>
-          </>
-        )}
+        <DialogActions className={classes.dtacmodalimagereward_dialogActionRoot}>
+          <Button variant="contained" onClick={onClickPositive} fullWidth>
+            {submitName}
+          </Button>
+        </DialogActions>
       </Dialog>
     </>
   )
