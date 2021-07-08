@@ -3,11 +3,8 @@ import Dialog from '@material-ui/core/Dialog'
 import { DialogProps } from '@material-ui/core/Dialog/Dialog'
 import DialogActions from '@material-ui/core/DialogActions'
 import DialogContent from '@material-ui/core/DialogContent'
-import DialogTitle from '@material-ui/core/DialogTitle'
-import IconButton from '@material-ui/core/IconButton'
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
-import CloseIcon from '@material-ui/icons/Close'
 import Button from '../Button'
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -98,7 +95,6 @@ const DtacModalNongTuaD: FC<DtacModalNongTuaDProps> = (props) => {
     onClose,
     onClickNegative,
     onClickPositive,
-    closeButton = false,
     title,
     description = 'Copy goes here',
     submitName,

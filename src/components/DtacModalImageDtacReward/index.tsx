@@ -2,12 +2,9 @@ import Dialog from '@material-ui/core/Dialog'
 import { DialogProps } from '@material-ui/core/Dialog/Dialog'
 import DialogActions from '@material-ui/core/DialogActions'
 import DialogContent from '@material-ui/core/DialogContent'
-import DialogTitle from '@material-ui/core/DialogTitle'
 import Grid from '@material-ui/core/Grid/Grid'
-import IconButton from '@material-ui/core/IconButton'
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
-import CloseIcon from '@material-ui/icons/Close'
 import React, { FC, memo, useEffect } from 'react'
 import Button from '../Button'
 
@@ -105,7 +102,6 @@ const DtacModalImageDtacReward: FC<DtacModalImageDtacRewardProps> = (props) => {
     open,
     onClose,
     onClickPositive,
-    closeButton = false,
     title,
     description = 'Copy goes here',
     submitName,
