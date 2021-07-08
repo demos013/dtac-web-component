@@ -44,7 +44,8 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     dtacmodalnongtud_tuadeeWrapper: {
       position: 'fixed',
-      top: -12,
+      // top: -12,
+      top: 'calc(50% - 10rem)',
 
       /** To make icon align center */
       left: 'calc(50% - 100px/2.8)',

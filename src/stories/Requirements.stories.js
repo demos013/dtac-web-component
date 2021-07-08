@@ -15,7 +15,13 @@ const stories = storiesOf('Modal', module)
 stories.add('Modal', () => {
   return (
     <div>
-      <Modal title={'Title'} submitName={'save'} open />
+      <Modal
+        title={'Title'}
+        submitName={'CTA'}
+        open
+        description={'Copy goes here'}
+        cancelName={'CTA'}
+      />
     </div>
   )
 })
@@ -67,13 +73,13 @@ stories.add('DtacModalTermCondition', () => {
 
 stories.add('DtacModalNongTuaD', () => {
   const description =
-    '• Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit aliquet elementum nibh. • Tempus id sed scelerisque dictum dignissim pellentesque consequat. Malesuada ac, est. • Tempus id sed scelerisque dictum dignissim pellentesque consequat. Malesuada ac, est. • Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit aliquet elementum nibh. • Tempus id sed scelerisque dictum dignissim pellentesque consequat. Malesuada ac, est. • Tempus id sed scelerisque dictum dignissim pellentesque consequat. Malesuada ac, est.'
+    'Lorem ipsum Sorry unable to do the transaction now Sorry unable to do the transaction nowSorry unable to do the transaction now Sorry unable to do the transaction now'
 
   return (
     <div>
       <DtacModalNongTuaD
         open
-        title={'Term and Condition'}
+        title={'Sorry unable to do the transaction now'}
         description={description}
         submitName={'okay'}
         fullWidth={true}
