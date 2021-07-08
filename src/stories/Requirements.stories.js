@@ -41,7 +41,7 @@ stories.add('DtacModalFormField', () => {
         title={'Title'}
         submitName={'save'}
         open
-        srcPath={'/images/circle_icon.svg'}
+        srcPath={'/images/icon/circle_icon.svg'}
       />
     </div>
   )
@@ -92,6 +92,7 @@ stories.add('DtacModalNongTuaD', () => {
         submitName={'okay'}
         fullWidth={true}
         maxWidth={'xs'}
+        srcPath={'/images/icon/nongtuadee_sorry.svg'}
       />
     </div>
   )
