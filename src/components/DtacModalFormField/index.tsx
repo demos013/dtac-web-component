@@ -17,8 +17,9 @@ const useStyles = makeStyles((theme: Theme) =>
     dtacmodalformfield_dialogContent: {
       padding: '0px 16px',
       textAlign: 'center',
+      overflowY: 'unset',
       ' .MuiDialogContent-root': {
-        overflowY: 'hidden',
+        overflowY: 'unset',
       },
     },
     dtacmodalformfield_closeButton: {
@@ -83,14 +84,12 @@ const DtacModalFormField: FC<DtacModalFormFieldProps> = (props) => {
   const {
     open,
     onClose,
-    // onClickNegative,
     onClickPositive,
     closeButton = false,
     children,
     title,
     description = 'Copy goes here',
     submitName,
-    // cancelName,
     srcPath,
     fullWidth = false,
     maxWidth = false,

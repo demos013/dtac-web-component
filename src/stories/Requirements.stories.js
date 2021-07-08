@@ -26,6 +26,14 @@ stories.add('Modal', () => {
   )
 })
 
+stories.add('modal_1CTA', () => {
+  return (
+    <div>
+      <Modal title={'Title'} submitName={'Primary CTA'} open description={'Copy goes here'} />
+    </div>
+  )
+})
+
 stories.add('DtacModalFormField', () => {
   return (
     <div>
