@@ -41,7 +41,7 @@ const useStyles = makeStyles((theme: Theme) =>
       '& > Button:not(:first-child)': {
         marginLeft: 16,
       },
-      [theme.breakpoints.down('xs')]: {
+      [theme.breakpoints.down(390)]: {
         display: 'block',
         textAlign: 'center',
         '& > Button:not(:first-child)': {
@@ -59,6 +59,9 @@ const useStyles = makeStyles((theme: Theme) =>
       left: 'calc(50% - 100px/2.8)',
       '& > div': {
         position: 'fixed !important',
+      },
+      [theme.breakpoints.down(390)]: {
+        top: 'calc(50% - 12rem)',
       },
     },
   }),
