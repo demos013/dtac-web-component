@@ -19,15 +19,16 @@ const useStyles = makeStyles((theme: Theme) =>
         paddingTop: '70px',
       },
     },
-    dtacmodalimagereward_closeButton: {
-      position: 'absolute',
-      right: theme.spacing(1),
-      top: theme.spacing(1),
-      color: theme.palette.grey[500],
-    },
-    dtacmodalimagereward_dialogTitle: {
-      padding: '62px 16px 12px',
-    },
+    // dtacmodalimagereward_closeButton: {
+    //   position: 'absolute',
+    //   right: theme.spacing(1),
+    //   top: theme.spacing(1),
+    //   color: theme.palette.grey[500],
+    // },
+
+    // dtacmodalimagereward_dialogTitle: {
+    //   padding: '62px 16px 12px',
+    // },
     dtacmodalimagereward_contentTextLeft: {
       fontSize: 16,
       fontWeight: 300,

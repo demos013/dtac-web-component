@@ -80,8 +80,8 @@ stories.add('DtacModalTermCondition', () => {
   )
 })
 
-stories.add('DtacModalNongTuaD1Button', () => {
-  const description = 'Lorem ipsum Sorryorry unable to do the transaction now'
+stories.add('DtacModalNongTuaD1Buttons', () => {
+  const description = '• Lorem ipsum. • Tempus id sed scelerisest.'
 
   return (
     <div>
@@ -99,7 +99,8 @@ stories.add('DtacModalNongTuaD1Button', () => {
 })
 
 stories.add('DtacModalNongTuaD2Buttons', () => {
-  const description = 'Lorem ipsum Sorryorry unable to do the transaction now'
+  const description =
+    'Lorem ipsum Sorryorry unable to do the transactionorem ipsum Sorryorry unable to do the transactionorem ipsum Sorryorry unable to do the transactionorem ipsum Sorryorry unable to do the transaction now'
 
   return (
     <div>
@@ -119,7 +120,7 @@ stories.add('DtacModalNongTuaD2Buttons', () => {
 
 stories.add('DtacModalImageDtacReward', () => {
   const description =
-    'Lorem ipsum dolor sit amet Tempus id sed scelerisque dictum dignissim pellentesqur sit amet Tempus id sed scelerisque dictum dignissim pellentesqur sit amet Tempus id sed scelerisque dictum dignissim pellentesqur sit amet Tempus id sed scelerisque dictum dignissim pellentesqur sit amet Tempus id sed scelerisque dictum dignissim pellentesqur sit amet Tempus id sed scelerisque dictum dignissim pellentesqur sit amet Tempus id sed scelerisque dictum dignissim pellentesqur sit amet Tempus id sed scelerisque dictum dignissim pellentesqur sit amet Tempus id sed scelerisque dictum dignissim pellentesqur sit amet Tempus id sed scelerisque dictum dignissim pellentesqur sit amet Tempus id sed scelerisque dictum dignissim pellentesqur sit amet Tempus id sed scelerisque dictum dignissim pellentesque consequat. Malesuada a'
+    'Lorem ipsum dolor sit amet Tempus id sed scelerisque dictum dignissim pellentesqur sit ametuada a'
   return (
     <div>
       <DtacModalImageDtacReward
