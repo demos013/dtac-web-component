@@ -9,6 +9,7 @@ import Typography from '@material-ui/core/Typography'
 import TextField from '@material-ui/core/TextField'
 import { useState } from 'react'
 import Button from '../Button'
+import clsx from 'clsx'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -52,6 +53,21 @@ const useStyles = makeStyles((theme: Theme) =>
     dtacmodalotp_input: {
       margin: theme.spacing(1),
       width: 40,
+    },
+    dtacmodalotp_title: {
+      fontSize: 16,
+      fontWeight: 700,
+    },
+    dtacmodalotp_bold: {
+      fontWeight: 700,
+    },
+    dtacmodalotp_image: {
+      alignSelf: 'center',
+      marginLeft: 8,
+      marginRight: 4,
+    },
+    dtacmodalotp_topgap8: {
+      marginTop: 8,
     },
   }),
 )
@@ -133,7 +149,9 @@ const DtacModalOtp: FC<DtacModalOtpProps> = (props) => {
         ) : (
           <>
             <DialogTitle id="alert-dialog-title" className={classes.dtacmodalotp_dialogTitle}>
-              <Typography align="left">{title}</Typography>
+              <Typography align="left" className={classes.dtacmodalotp_title}>
+                {title}
+              </Typography>
             </DialogTitle>
 
             <DialogContent className={classes.dtacmodalotp_dialogContent}>
@@ -163,14 +181,27 @@ const DtacModalOtp: FC<DtacModalOtpProps> = (props) => {
                 )
               })}
 
-              <Typography className={classes.dtacmodalotp_contentText} align="left">
-                {'OTP will be valid for 15 mins'}
+              <Typography
+                className={clsx(classes.dtacmodalotp_contentText, classes.dtacmodalotp_topgap8)}
+                align="left"
+              >
+                {'OTP will be valid for'}
+                <span className={clsx(classes.dtacmodalotp_contentText, classes.dtacmodalotp_bold)}>
+                  {' 15 mins'}
+                </span>
               </Typography>
 
               <div className={classes.dtacmodalotp_resentOtpWrapper}>
                 <Typography className={classes.dtacmodalotp_contentText} align="left">
                   {'Didn’t receive OTP code?'}
                 </Typography>
+
+                <img
+                  src={'/images/sent.svg'}
+                  width={12}
+                  height={10}
+                  className={classes.dtacmodalotp_image}
+                />
                 <Typography className={classes.dtacmodalotp_resentOtp} align="left">
                   {'Re-send OTP'}
                 </Typography>

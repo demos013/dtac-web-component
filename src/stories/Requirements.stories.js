@@ -38,7 +38,8 @@ stories.add('DtacModalFormField', () => {
   return (
     <div>
       <DtacModalFormField
-        title={'Title'}
+        title={'Title goes here'}
+        description={'Description'}
         submitName={'save'}
         open
         srcPath={'/images/icon/circle_icon.svg'}
