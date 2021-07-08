@@ -68,47 +68,47 @@ stories.add('Icon Button', () => {
     <div style={styleBox}>
       <div style={item}>
         <IconButton variant="contained">
-          <img src="/images/circle_icon.svg" />
+          <img src="/images/icon/circle_icon.svg" />
         </IconButton>
       </div>
       <div style={item}>
         <IconButton>
-          <img src="/images/circle_icon.svg" />
+          <img src="/images/icon/circle_icon.svg" />
         </IconButton>
       </div>
       <div style={item}>
         <IconButton variant="outlined" text={`Network Check & Share`}>
-          <img src="/images/circle_icon.svg" />
+          <img src="/images/icon/circle_icon.svg" />
         </IconButton>
       </div>
       <div style={item}>
         <IconButton disabled>
-          <img src="/images/circle_icon.svg" />
+          <img src="/images/icon/circle_icon.svg" />
         </IconButton>
       </div>
       <div style={item}>
         <IconButton text="PlatBlue exclusive" className={classes.iconButtonExclusive}>
-          <img src="/images/p_icon.svg" />
+          <img src="/images/icon/p_icon.svg" />
         </IconButton>
       </div>
       <div style={item}>
         <IconButton disabled className={classes.iconButtonExclusive}>
-          <img src="/images/p_icon.svg" />
+          <img src="/images/icon/p_icon.svg" />
         </IconButton>
       </div>
       <div style={item}>
         <IconButton variant="outlined" size="large" text="Lorem ipsum">
-          <img src="/images/circle_icon.svg" />
+          <img src="/images/icon/circle_icon.svg" />
         </IconButton>
       </div>
       <div style={item}>
         <IconButton variant="contained" size="large" text="Lorem ipsum">
-          <img src="/images/circle_icon.svg" />
+          <img src="/images/icon/circle_icon.svg" />
         </IconButton>
       </div>
       <div style={item}>
         <IconButton variant="contained" size="large" text="Lorem ipsum" disabled>
-          <img src="/images/circle_icon.svg" />
+          <img src="/images/icon/circle_icon.svg" />
         </IconButton>
       </div>
     </div>

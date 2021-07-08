@@ -39,8 +39,9 @@
   "include": [
     "**/*.ts",
     "**/*.tsx",
-    "./src/**/*.stories.js",
-    "./src/**/*.js",
+    "/**/*.stories.js",
+    "/**/*.js",
+    "./src/custom.d.ts",
   ],
   "exclude": [
     "node_modules",
