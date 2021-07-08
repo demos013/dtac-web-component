@@ -9,8 +9,17 @@ import DtacModalTermCondition from '../components/DtacModalTermCondition'
 import DtacModalNongTuaD from '../components/DtacModalNongTuaD'
 import DtacModalImageDtacReward from '../components/DtacModalImageDtacReward'
 import './styles.css'
+import DtacModal from '../components/DtacModal'
 
 const stories = storiesOf('Modal', module)
+
+const tuadsorryPath = '/images/icon/nongtuadee_sorry.svg'
+const tuadattentionPath = '/images/icon/nongtuadee_attention.svg'
+const tuadtelenorpinwheelPath = '/images/icon/nongtuadee_telenorpinwheel.svg'
+const tuaddeterminePath = '/images/icon/nongtuadee_determine.svg'
+const tuadhappyPath = '/images/icon/nongtuadee_happy.svg'
+const tuadhappsmilePath = '/images/icon/nongtuadee_happy-smile.svg'
+const tuadhungryPath = '/images/icon/nongtuadee_hungry.svg'
 
 stories.add('Modal', () => {
   return (
@@ -42,7 +51,23 @@ stories.add('DtacModalFormField', () => {
         description={'Description'}
         submitName={'save'}
         open
-        srcPath={'/images/icon/circle_icon.svg'}
+        srcPath={'/images/icon/rectangle_small.svg'}
+        disable
+      />
+    </div>
+  )
+})
+
+stories.add('DtacModalNoFormField', () => {
+  return (
+    <div>
+      <DtacModal
+        title={'Title goes here'}
+        description={'Description'}
+        submitName={'save'}
+        cancelName={'cancel'}
+        open
+        srcPath={'/images/icon/rectangle_small.svg'}
       />
     </div>
   )
@@ -81,14 +106,7 @@ stories.add('DtacModalTermCondition', () => {
 })
 
 stories.add('DtacModalNongTuaD1Buttons', () => {
-  const description = '• Lorem ipsum. • Tempus id sed scelerisest.'
-  const tuadsorryPath = '/images/icon/nongtuadee_sorry.svg'
-  const tuadattentionPath = '/images/icon/nongtuadee_attention.svg'
-  const tuadtelenorpinwheelPath = '/images/icon/nongtuadee_telenorpinwheel.svg'
-  const tuaddeterminePath = '/images/icon/nongtuadee_determine.svg'
-  const tuadhappyPath = '/images/icon/nongtuadee_happy.svg'
-  const tuadhappsmilePath = '/images/icon/nongtuadee_happy-smile.svg'
-  const tuadhungryPath = '/images/icon/nongtuadee_hungry.svg'
+  const description = 'Want to try again?'
 
   return (
     <div>

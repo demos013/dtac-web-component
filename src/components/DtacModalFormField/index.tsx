@@ -73,6 +73,7 @@ interface DtacModalFormFieldProps extends DialogProps {
   submitName: string
   closeButton?: boolean
   srcPath?: string
+  disable?: boolean
   align?: 'inherit' | 'left' | 'center' | 'right' | 'justify'
   onClose?: () => void
   onClickNegative?: () => void
@@ -86,7 +87,7 @@ const DtacModalFormField: FC<DtacModalFormFieldProps> = (props) => {
     onClose,
     onClickPositive,
     closeButton = false,
-    children,
+    disable = false,
     title,
     description = 'Copy goes here',
     submitName,
@@ -104,58 +105,52 @@ const DtacModalFormField: FC<DtacModalFormFieldProps> = (props) => {
   return (
     <>
       <Dialog open={open} onClose={handleClose} maxWidth={maxWidth} fullWidth={fullWidth}>
-        {children ? (
-          children
-        ) : (
-          <>
-            <DialogTitle id="alert-dialog-title" className={classes.dtacmodalformfield_dialogTitle}>
-              <Typography align="center" className={classes.dtacmodalformfield_title}>
-                {title}
-              </Typography>
-              {closeButton && (
-                <IconButton
-                  aria-label="close"
-                  className={classes.dtacmodalformfield_closeButton}
-                  onClick={handleClose}
-                >
-                  <CloseIcon />
-                </IconButton>
-              )}
-            </DialogTitle>
+        <DialogTitle id="alert-dialog-title" className={classes.dtacmodalformfield_dialogTitle}>
+          <Typography align="center" className={classes.dtacmodalformfield_title}>
+            {title}
+          </Typography>
+          {closeButton && (
+            <IconButton
+              aria-label="close"
+              className={classes.dtacmodalformfield_closeButton}
+              onClick={handleClose}
+            >
+              <CloseIcon />
+            </IconButton>
+          )}
+        </DialogTitle>
 
-            <DialogContent className={classes.dtacmodalformfield_dialogContent}>
-              {srcPath && (
-                <div>
-                  <img src={srcPath} width={30} height={30} />
-                </div>
-              )}
+        <DialogContent className={classes.dtacmodalformfield_dialogContent}>
+          {srcPath && (
+            <div>
+              <img src={srcPath} width={30} height={30} />
+            </div>
+          )}
 
-              <Typography className={classes.dtacmodalformfield_description} align={align}>
-                {description}
-              </Typography>
+          <Typography className={classes.dtacmodalformfield_description} align={align}>
+            {description}
+          </Typography>
 
-              <div className={classes.dtacmodalformfield_formWrapper}>
-                <Typography className={clsx(classes.dtacmodalformfield_titleForm)}>
-                  {'Type your account name'}
-                </Typography>
-                <form noValidate autoComplete="off">
-                  <TextField
-                    id="outlined-basic"
-                    variant="outlined"
-                    className={classes.dtacmodalformfield_textField}
-                    placeholder={'Account number'}
-                  />
-                </form>
-              </div>
-            </DialogContent>
+          <div className={classes.dtacmodalformfield_formWrapper}>
+            <Typography className={clsx(classes.dtacmodalformfield_titleForm)}>
+              {'Type your account name'}
+            </Typography>
+            <form noValidate autoComplete="off">
+              <TextField
+                id="outlined-basic"
+                variant="outlined"
+                className={classes.dtacmodalformfield_textField}
+                placeholder={'Account number'}
+              />
+            </form>
+          </div>
+        </DialogContent>
 
-            <DialogActions className={classes.dtacmodalformfield_dialogActionRoot}>
-              <Button variant="contained" onClick={onClickPositive} fullWidth disabled>
-                {submitName}
-              </Button>
-            </DialogActions>
-          </>
-        )}
+        <DialogActions className={classes.dtacmodalformfield_dialogActionRoot}>
+          <Button variant="contained" onClick={onClickPositive} fullWidth disabled={disable}>
+            {submitName}
+          </Button>
+        </DialogActions>
       </Dialog>
     </>
   )
