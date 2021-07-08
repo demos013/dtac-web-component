@@ -33,21 +33,17 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     dtacmodalimagereward_contentTextRight: {
       fontSize: 16,
-      fontWeight: 700,
+      fontWeight: 300,
       letterSpacing: 0,
       color: '#000000',
+      marginLeft: 8,
     },
     dtacmodalimagereward_dialogActionRoot: {
       padding: 24,
+      display: 'flex',
+      justifyContent: 'center',
       '& > Button:not(:first-child)': {
         marginLeft: 16,
-      },
-      [theme.breakpoints.down('xs')]: {
-        display: 'block',
-        '& > Button:not(:first-child)': {
-          marginLeft: 0,
-          marginTop: 16,
-        },
       },
     },
     dtacmodalimagereward_tuadeeWrapper: {
@@ -70,6 +66,10 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     dtacmodalimagereward_marginTop16: {
       marginTop: 16,
+    },
+    gridCoin: {
+      display: 'flex',
+      justifyContent: 'flex-end',
     },
   }),
 )
@@ -149,7 +149,8 @@ const DtacModalImageDtacReward: FC<DtacModalImageDtacRewardProps> = (props) => {
                     {'Earned:'}
                   </Typography>
                 </Grid>
-                <Grid item xs={8}>
+                <Grid item xs={8} className={classes.gridCoin}>
+                  <img src={'/images/coin_icon.png'} width={20} height={20} />
                   <Typography
                     className={classes.dtacmodalimagereward_contentTextRight}
                     align={'right'}
@@ -188,9 +189,7 @@ const DtacModalImageDtacReward: FC<DtacModalImageDtacRewardProps> = (props) => {
                     className={classes.dtacmodalimagereward_contentTextRight}
                     align={'left'}
                   >
-                    {
-                      'Lorem ipsum dolor sit amet Tempus id sed scelerisque dictum dignissim pellentesque consequat. Malesuada a'
-                    }
+                    {description}
                   </Typography>
                 </Grid>
               </Grid>

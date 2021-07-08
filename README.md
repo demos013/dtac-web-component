@@ -12,3 +12,9 @@ dtac Components for web helps developers execute dtac design. Developed by a cor
 npm i @demos013/dtac-web-components or
 yarn add @demos013/dtac-web-components
 ```
+
+### image
+```
+temporary images should be in 'src/stories/resource/images/icon'
+fixed images should be in public/images
+```````

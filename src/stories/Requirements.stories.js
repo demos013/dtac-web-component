@@ -26,6 +26,14 @@ stories.add('Modal', () => {
   )
 })
 
+stories.add('modal_1CTA', () => {
+  return (
+    <div>
+      <Modal title={'Title'} submitName={'Primary CTA'} open description={'Copy goes here'} />
+    </div>
+  )
+})
+
 stories.add('DtacModalFormField', () => {
   return (
     <div>
@@ -33,7 +41,7 @@ stories.add('DtacModalFormField', () => {
         title={'Title'}
         submitName={'save'}
         open
-        srcPath={'/images/circle_icon.svg'}
+        srcPath={'/images/icon/circle_icon.svg'}
       />
     </div>
   )
@@ -73,7 +81,7 @@ stories.add('DtacModalTermCondition', () => {
 
 stories.add('DtacModalNongTuaD', () => {
   const description =
-    'Lorem ipsum Sorry unable to do the transaction now Sorry unable to do the transaction nowSorry unable to do the transaction now Sorry unable to do the transaction now'
+    'Lorem ipsum Sorryorry unable to do the transaction now'
 
   return (
     <div>
@@ -84,6 +92,7 @@ stories.add('DtacModalNongTuaD', () => {
         submitName={'okay'}
         fullWidth={true}
         maxWidth={'xs'}
+        srcPath={'/images/icon/nongtuadee_sorry.svg'}
       />
     </div>
   )
@@ -91,8 +100,7 @@ stories.add('DtacModalNongTuaD', () => {
 
 stories.add('DtacModalImageDtacReward', () => {
   const description =
-    '• Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit aliquet elementum nibh. • Tempus id sed scelerisque dictum dignissim pellentesque consequat. Malesuada ac, est. • Tempus id sed scelerisque dictum dignissim pellentesque consequat. Malesuada ac, est. • Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit aliquet elementum nibh. • Tempus id sed scelerisque dictum dignissim pellentesque consequat. Malesuada ac, est. • Tempus id sed scelerisque dictum dignissim pellentesque consequat. Malesuada ac, est.'
-
+    'Lorem ipsum dolor sit amet Tempus id sed scelerisque dictum dignissim pellentesque consequat. Malesuada a'
   return (
     <div>
       <DtacModalImageDtacReward

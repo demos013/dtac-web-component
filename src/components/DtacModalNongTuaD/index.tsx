@@ -64,6 +64,7 @@ interface DtacModalNongTuaDProps extends DialogProps {
   submitName: string
   closeButton?: boolean
   align?: 'inherit' | 'left' | 'center' | 'right' | 'justify'
+  srcPath: string
   onClose?: () => void
   onClickNegative?: () => void
   onClickPositive?: () => void
@@ -82,6 +83,7 @@ const DtacModalNongTuaD: FC<DtacModalNongTuaDProps> = (props) => {
     submitName,
     cancelName,
     timer,
+    srcPath,
     fullWidth = false,
     maxWidth = false,
     align = 'center',
@@ -104,7 +106,7 @@ const DtacModalNongTuaD: FC<DtacModalNongTuaDProps> = (props) => {
     <>
       <Dialog open={open} onClose={handleClose} maxWidth={maxWidth} fullWidth={fullWidth}>
         <div className={classes.dtacmodalnongtud_tuadeeWrapper}>
-          <img src={'/images/nongtuadee_sorry.svg'} width={85} height={85}></img>
+          <img src={srcPath} width={85} height={85}></img>
         </div>
         <DialogTitle id="alert-dialog-title" className={classes.dtacmodalnongtud_dialogTitle}>
           <Typography align="center">{title}</Typography>
