@@ -15,6 +15,9 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     dtacmodalimagereward_dialogContent: {
       padding: '0px 16px',
+      '&.MuiDialogContent-root': {
+        paddingTop: '70px',
+      },
     },
     dtacmodalimagereward_closeButton: {
       position: 'absolute',
@@ -39,7 +42,7 @@ const useStyles = makeStyles((theme: Theme) =>
       marginLeft: 8,
     },
     dtacmodalimagereward_dialogActionRoot: {
-      padding: 24,
+      padding: '12px 16px',
       display: 'flex',
       justifyContent: 'center',
       '& > Button:not(:first-child)': {
@@ -48,14 +51,17 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     dtacmodalimagereward_tuadeeWrapper: {
       position: 'fixed',
-      top: 0,
+      // top: 0,
+
+      margin: '-138px 0 0',
+      zIndex: 999999,
       [theme.breakpoints.up(320)]: {
-        display: 'fixed',
-        top: 32,
+        // display: 'fixed',
+        // top: 32,
       },
       [theme.breakpoints.up(600)]: {
-        display: 'fixed',
-        top: 64,
+        // display: 'fixed',
+        // top: 64,
       },
 
       /** To make icon align center */
@@ -99,7 +105,6 @@ const DtacModalImageDtacReward: FC<DtacModalImageDtacRewardProps> = (props) => {
     onClose,
     onClickPositive,
     closeButton = false,
-    children,
     title,
     description = 'Copy goes here',
     submitName,
@@ -124,7 +129,7 @@ const DtacModalImageDtacReward: FC<DtacModalImageDtacRewardProps> = (props) => {
   return (
     <>
       <Dialog open={open} onClose={handleClose} maxWidth={maxWidth} fullWidth={fullWidth}>
-        <div className={classes.dtacmodalimagereward_tuadeeWrapper}>
+        {/* <div className={classes.dtacmodalimagereward_tuadeeWrapper}>
           <img src={'/images/rectangle.svg'} width={198} height={134} />
         </div>
         <DialogTitle id="alert-dialog-title" className={classes.dtacmodalimagereward_dialogTitle}>
@@ -140,9 +145,15 @@ const DtacModalImageDtacReward: FC<DtacModalImageDtacRewardProps> = (props) => {
               <CloseIcon />
             </IconButton>
           )}
-        </DialogTitle>
+        </DialogTitle> */}
 
         <DialogContent className={classes.dtacmodalimagereward_dialogContent}>
+          <div className={classes.dtacmodalimagereward_tuadeeWrapper}>
+            <img src={'/images/rectangle.svg'} width={198} height={134} />
+          </div>
+          <Typography align="left" className={classes.dtacmodalimagereward_title}>
+            {title}
+          </Typography>
           <Grid container>
             <Grid item xs={4}>
               <Typography className={classes.dtacmodalimagereward_contentTextLeft} align={'left'}>

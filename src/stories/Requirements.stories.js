@@ -119,7 +119,7 @@ stories.add('DtacModalNongTuaD2Buttons', () => {
 
 stories.add('DtacModalImageDtacReward', () => {
   const description =
-    'Lorem ipsum dolor sit amet Tempus id sed scelerisque dictum dignissim pellentesque consequat. Malesuada a'
+    'Lorem ipsum dolor sit amet Tempus id sed scelerisque dictum dignissim pellentesqur sit amet Tempus id sed scelerisque dictum dignissim pellentesqur sit amet Tempus id sed scelerisque dictum dignissim pellentesqur sit amet Tempus id sed scelerisque dictum dignissim pellentesqur sit amet Tempus id sed scelerisque dictum dignissim pellentesqur sit amet Tempus id sed scelerisque dictum dignissim pellentesqur sit amet Tempus id sed scelerisque dictum dignissim pellentesqur sit amet Tempus id sed scelerisque dictum dignissim pellentesqur sit amet Tempus id sed scelerisque dictum dignissim pellentesqur sit amet Tempus id sed scelerisque dictum dignissim pellentesqur sit amet Tempus id sed scelerisque dictum dignissim pellentesqur sit amet Tempus id sed scelerisque dictum dignissim pellentesque consequat. Malesuada a'
   return (
     <div>
       <DtacModalImageDtacReward
