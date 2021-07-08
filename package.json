@@ -9,7 +9,7 @@
   "license": "MIT",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "storybook": "start-storybook -s ./src/stories/resource -p 6006",
+    "storybook": "start-storybook -s ./src/stories/resource,./public -p 6006",
     "build-storybook": "build-storybook",
     "build": "rollup -c"
   },
