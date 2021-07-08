@@ -29,13 +29,21 @@ const useStyles = makeStyles((theme: Theme) =>
       fontWeight: 300,
       letterSpacing: 0,
     },
-    dtacmodalnongtud_dialogActionRoot: {
+    dtacmodalnongtud_dialogActionRoot1Btn: {
       padding: 24,
+      display: 'flex',
+      justifyContent: 'center',
+    },
+    dtacmodalnongtud_dialogActionRoot2Btn: {
+      padding: 24,
+      display: 'flex',
+      justifyContent: 'center',
       '& > Button:not(:first-child)': {
         marginLeft: 16,
       },
       [theme.breakpoints.down('xs')]: {
         display: 'block',
+        textAlign: 'center',
         '& > Button:not(:first-child)': {
           marginLeft: 0,
           marginTop: 16,
@@ -127,7 +135,13 @@ const DtacModalNongTuaD: FC<DtacModalNongTuaDProps> = (props) => {
           </Typography>
         </DialogContent>
 
-        <DialogActions className={classes.dtacmodalnongtud_dialogActionRoot}>
+        <DialogActions
+          className={
+            cancelName
+              ? classes.dtacmodalnongtud_dialogActionRoot2Btn
+              : classes.dtacmodalnongtud_dialogActionRoot1Btn
+          }
+        >
           {cancelName && (
             <Button onClick={onClickNegative} fullWidth>
               {cancelName}

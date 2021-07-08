@@ -80,7 +80,7 @@ stories.add('DtacModalTermCondition', () => {
   )
 })
 
-stories.add('DtacModalNongTuaD', () => {
+stories.add('DtacModalNongTuaD1Button', () => {
   const description =
     'Lorem ipsum Sorryorry unable to do the transaction now'
 
@@ -91,6 +91,26 @@ stories.add('DtacModalNongTuaD', () => {
         title={'Sorry unable to do the transaction now'}
         description={description}
         submitName={'okay'}
+        fullWidth={true}
+        maxWidth={'xs'}
+        srcPath={'/images/icon/nongtuadee_sorry.svg'}
+      />
+    </div>
+  )
+})
+
+stories.add('DtacModalNongTuaD2Buttons', () => {
+  const description =
+    'Lorem ipsum Sorryorry unable to do the transaction now'
+
+  return (
+    <div>
+      <DtacModalNongTuaD
+        open
+        title={'Sorry unable to do the transaction now'}
+        description={description}
+        submitName={'okay'}
+        cancelName={'cancel'}
         fullWidth={true}
         maxWidth={'xs'}
         srcPath={'/images/icon/nongtuadee_sorry.svg'}
