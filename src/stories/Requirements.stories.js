@@ -82,6 +82,13 @@ stories.add('DtacModalTermCondition', () => {
 
 stories.add('DtacModalNongTuaD1Buttons', () => {
   const description = '• Lorem ipsum. • Tempus id sed scelerisest.'
+  const tuadsorryPath = '/images/icon/nongtuadee_sorry.svg'
+  const tuadattentionPath = '/images/icon/nongtuadee_attention.svg'
+  const tuadtelenorpinwheelPath = '/images/icon/nongtuadee_telenorpinwheel.svg'
+  const tuaddeterminePath = '/images/icon/nongtuadee_determine.svg'
+  const tuadhappyPath = '/images/icon/nongtuadee_happy.svg'
+  const tuadhappsmilePath = '/images/icon/nongtuadee_happy-smile.svg'
+  const tuadhungryPath = '/images/icon/nongtuadee_hungry.svg'
 
   return (
     <div>
@@ -92,7 +99,7 @@ stories.add('DtacModalNongTuaD1Buttons', () => {
         submitName={'okay'}
         fullWidth={true}
         maxWidth={'xs'}
-        srcPath={'/images/icon/nongtuadee_sorry.svg'}
+        srcPath={tuadhungryPath}
       />
     </div>
   )
