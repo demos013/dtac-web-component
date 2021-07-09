@@ -29,10 +29,10 @@ const useStyles = makeStyles({
   },
 })
 
-const SummaryCardItem: FC<SummaryCardItemProps> = ({ icon, upperText, lowerText }) => {
+const SummaryCardItem: FC<SummaryCardItemProps> = ({ icon, upperText, lowerText, size }) => {
   const classes = useStyles()
   return (
-    <Grid item xs={4}>
+    <Grid item xs={size ? size : 3}>
       <Grid container>
         <Grid item xs={2} className={classes.summarycard_item_iconWrapper}>
           <img src={icon} width={16} height={16} />

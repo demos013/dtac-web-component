@@ -21,10 +21,9 @@ const SummaryCard: FC<PackageCardBaseProps> & {
   const {
     header,
     align,
-    onClick = () => {},
     className,
     headerBackgroundColor = '#E7EEF4',
-    saleTag = false,
+
     items,
     rightBottom,
     leftBottom,
@@ -46,7 +45,7 @@ const SummaryCard: FC<PackageCardBaseProps> & {
     >
       <div>
         <Grid container spacing={2}>
-          {items && items.map((item) => item)}
+          {items}
         </Grid>
       </div>
     </PackageCardBase>

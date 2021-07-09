@@ -12,6 +12,7 @@ type StyleProps = {
 const useStyles = makeStyles<Theme, StyleProps>((theme: Theme) =>
   createStyles({
     packagecard_base_root: {
+      position: 'relative',
       minWidth: 280,
       boxShadow: '0px 0px 2px rgba(40, 41, 61, 0.04), 0px 4px 8px rgba(96, 97, 112, 0.16)',
       borderRadius: 8,
@@ -66,13 +67,17 @@ const useStyles = makeStyles<Theme, StyleProps>((theme: Theme) =>
     },
     packagecard_base_paddingY: {
       paddingTop: 16,
-      paddingBottom: '16px !important',
+      paddingBottom: '8px !important',
     },
     packagecard_base_prefixWhiteSpace: { marginLeft: 4 },
     packagecard_base_amountWrapper: {
       display: 'flex',
+    },
+    packagecard_base_allignItemCenter: {
       alignItems: 'center',
-      // alignItems: 'baseline',
+    },
+    packagecard_base_allignItemBaseline: {
+      alignItems: 'baseline',
     },
     packagecard_base_preferWrapper: {
       display: 'flex',
@@ -103,8 +108,12 @@ const useStyles = makeStyles<Theme, StyleProps>((theme: Theme) =>
       borderRadius: ' 0 20px 8px 8px',
     },
     packagecard_base_saleTagWrapper: {
-      right: 6,
+      top: 16,
+      right: -18,
       position: 'absolute',
+      '& > img': {
+        display: 'block',
+      },
     },
     packagecard_base_widthShortDesc: {
       width: 'calc(100% - 56px)',
@@ -140,7 +149,6 @@ const PackageCardBase: FC<Props> = (props) => {
     children,
     header,
     align,
-    onClick = () => {},
     className,
     headerBackgroundColor,
     saleTag = false,
@@ -173,10 +181,6 @@ const PackageCardBase: FC<Props> = (props) => {
     )
   }
 
-  const onCardClick = () => {
-    onClick()
-  }
-
   return (
     <div
       className={clsx([
@@ -186,11 +190,10 @@ const PackageCardBase: FC<Props> = (props) => {
           ? classes.packagecard_base_vertical
           : classes.packagecard_base_horizonal,
       ])}
-      onClick={onCardClick}
     >
       {saleTag && (
         <div className={classes.packagecard_base_saleTagWrapper}>
-          <img src={'/images/icon/flag-default.svg'} width={80} height={80} />
+          <img src={'/images/icon/flag-default.svg'} width={114} height={58} />
         </div>
       )}
       <div
@@ -215,7 +218,13 @@ const PackageCardBase: FC<Props> = (props) => {
         )}
 
         <div>
-          <div className={classes.packagecard_base_amountWrapper}>
+          <div
+            className={`${classes.packagecard_base_amountWrapper} ${
+              header.fullPrice
+                ? classes.packagecard_base_allignItemCenter
+                : classes.packagecard_base_allignItemBaseline
+            }`}
+          >
             {header.discountedPrice && (
               <Typography
                 className={clsx(

@@ -109,15 +109,16 @@ stories.add('Package Card', () => {
           header={{
             title: 'dtac Go+ 2199 unlimited internet',
             discountedPrice: '235',
-            fullPrice: '250',
+            // fullPrice: '250',
             unit: 'Baht',
-            caption: 'Naruk ja',
-            upSelling: 'Jing ror',
+            caption: 'Caption',
+            upSelling: 'Marketing message space',
             vatText: '(excl. VAT)',
           }}
           items={items.map((item) => (
             <Item icon={item.icon} primaryText={item.upperText} text={item.lowerText} />
           ))}
+          saleTag={true}
           leftBottom={
             <div className={classes.expandsWrapper} onClick={() => setIsExpand1(!isExpand1)}>
               <Typography>See more details</Typography>
@@ -166,10 +167,10 @@ stories.add('Package Card', () => {
           header={{
             title: 'dtac Go+ 2199 unlimited internet',
             discountedPrice: '235',
-            fullPrice: '250',
+            // fullPrice: '250',
             unit: 'Baht',
-            caption: 'Naruk ja',
-            upSelling: 'Jing ror',
+            caption: 'Marketing message space',
+            upSelling: 'Caption',
             vatText: '(excl. VAT)',
           }}
           headerBackgroundColor="linear-gradient(93.35deg, #19AAF8 0%, #917DCC 100%)"
@@ -219,6 +220,7 @@ stories.add('Package Card', () => {
           items={items.map((item) => (
             <Item icon={item.icon} primaryText={item.upperText} text={item.lowerText} />
           ))}
+          saleTag={true}
           rightBottom={
             <Button variant="contained" onClick={() => {}}>
               Get
@@ -243,6 +245,7 @@ stories.add('Package Card', () => {
             upSelling: 'Jing ror',
             vatText: '(excl. VAT)',
           }}
+          saleTag={true}
           headerBackgroundColor="linear-gradient(96.03deg, #929497 0%, #BBBDBF 100%)"
           items={items.map((item) => (
             <Item icon={item.icon} primaryText={item.upperText} text={item.lowerText} />
@@ -294,7 +297,7 @@ stories.add('Summary Card', () => {
         <SummaryCard
           header={{ title: 'dtac Go+ 2199 unlimited internet' }}
           items={items.slice(3).map((item) => (
-            <Item icon={item.icon} upperText={item.upperText} lowerText={item.lowerText} />
+            <Item size={4} icon={item.icon} upperText={item.upperText} lowerText={item.lowerText} />
           ))}
           rightBottom={
             <Button variant="contained" onClick={() => {}}>
@@ -330,7 +333,7 @@ stories.add('Summary Card', () => {
         <SummaryCard
           header={{ title: 'dtac Go+ 2199 unlimited internet' }}
           items={items.map((item) => (
-            <Item icon={item.icon} upperText={item.upperText} lowerText={item.lowerText} />
+            <Item size={6} icon={item.icon} upperText={item.upperText} lowerText={item.lowerText} />
           ))}
           leftBottom={
             <div className={classes.expandsWrapper} onClick={() => setIsExpand(!isExpand)}>

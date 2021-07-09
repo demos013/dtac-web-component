@@ -18,7 +18,6 @@ const PackageCard: FC<PackageCardBaseProps> & {
   const {
     header,
     align,
-    onClick = () => {},
     className,
     headerBackgroundColor,
     saleTag = false,
@@ -40,6 +39,7 @@ const PackageCard: FC<PackageCardBaseProps> & {
       expands={expands}
       isExpands={isExpands}
       expandsItems={expandsItems}
+      saleTag={saleTag}
     >
       <div>{items && items.map((item) => item)}</div>
     </PackageCardBase>

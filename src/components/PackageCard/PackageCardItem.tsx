@@ -9,7 +9,6 @@ const useStyles = makeStyles((theme: Theme) =>
     packagecard_item_iconWrapper: {
       display: 'flex',
     },
-
     packagecard_item_postWhiteSpace: {
       marginRight: 5,
     },

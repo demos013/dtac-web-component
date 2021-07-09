@@ -13,7 +13,6 @@ export interface PackageCardHeaderProps {
 export interface PackageCardBaseProps {
   header: PackageCardHeaderProps
   align?: 'vertical' | 'horizontal' | undefined
-  onClick?: () => void
   selected?: boolean
   className?: typeof clsx | string
   headerBackgroundColor?: string
@@ -29,14 +28,13 @@ export interface PackageCardBaseProps {
 
 export interface SummaryCardItemProps {
   icon: string
-  iconColor?: stirng | undefined
+  size?: number | undefined
   upperText: string
   lowerText: string
 }
 
 export interface PackageCardItemProps {
   icon?: string | undefined
-  iconColor?: stirng | undefined
   primaryText?: string | undefined
   text?: string | undefined
 }
