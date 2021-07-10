@@ -9,7 +9,7 @@ import { Button, PackageCard, SummaryCard } from '../components'
 const stories = storiesOf('Package Card', module)
 const styleBox: React.CSSProperties = { display: 'flex', flexWrap: 'wrap' }
 const item: React.CSSProperties = {
-  padding: '2px 30px 5px 2px',
+  padding: '2px 30px 16px 2px',
   // boxizing: 'border-box',
   flexGrow: 1,
   flexBasis: 'calc(25% - 10px)',
@@ -355,6 +355,17 @@ stories.add('Summary Card', () => {
               </div>
             </>
           }
+
+          // headerBackgroundColor="#fff"
+        />
+      </div>
+      <div style={item}>
+        <SummaryCard
+          header={{ title: 'dtac Go+ 2199 unlimited internet' }}
+          items={items.map((item) => (
+            <Item size={4} icon={item.icon} upperText={item.upperText} lowerText={item.lowerText} />
+          ))}
+          isExpands={isExpand}
 
           // headerBackgroundColor="#fff"
         />

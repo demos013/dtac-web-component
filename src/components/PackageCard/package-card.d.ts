@@ -1,3 +1,4 @@
+import { GridSize } from '@material-ui/core/Grid'
 import clsx from 'clsx'
 import { ReactNode } from 'react'
 
@@ -28,7 +29,7 @@ export interface PackageCardBaseProps {
 
 export interface SummaryCardItemProps {
   icon: string
-  size?: number | undefined
+  size?: GridSize | undefined
   upperText: string
   lowerText: string
 }

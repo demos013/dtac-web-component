@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 )
 
-const PackageCardItem: FC<PackageCardItemProps> = ({ icon, iconColor, primaryText, text }) => {
+const PackageCardItem: FC<PackageCardItemProps> = ({ icon, primaryText, text }) => {
   const classes = useStyles()
   return (
     <div className={classes.packagecard_item_textWrapper}>
