@@ -21,9 +21,7 @@ const SummaryCard: FC<PackageCardBaseProps> & {
   const {
     header,
     align,
-    className,
     headerBackgroundColor = '#E7EEF4',
-
     items,
     rightBottom,
     leftBottom,
@@ -42,6 +40,7 @@ const SummaryCard: FC<PackageCardBaseProps> & {
       expands={expands}
       isExpands={isExpands}
       expandsItems={expandsItems}
+      align={align}
     >
       <div>
         <Grid container spacing={2}>

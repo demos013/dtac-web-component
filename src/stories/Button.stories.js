@@ -113,29 +113,19 @@ stories.add('Button', () => {
           <Button className={classes.gamingnationOutlined}>Button</Button>
         </div>
         <div style={item}>
-          <Button className={classes.welcomeButton}>
-            <img src="/images/icon/welcome-button.svg"></img>
-          </Button>
+          <Button mode="welcome" />
         </div>
         <div style={item}>
-          <Button className={classes.silverButton}>
-            <img src="/images/icon/silver-button.svg"></img>
-          </Button>
+          <Button mode="silver" />
         </div>
         <div style={item}>
-          <Button className={classes.goldButton}>
-            <img src="/images/icon/gold-button.svg"></img>
-          </Button>
+          <Button mode="gold" />
         </div>
         <div style={item}>
-          <Button className={classes.platinumButton}>
-            <img src="/images/icon/platinum-button.svg"></img>
-          </Button>
+          <Button mode="platinum" />
         </div>
         <div style={item}>
-          <Button className={classes.platinumButton}>
-            <img src="/images/icon/platinum-button.svg"></img>
-          </Button>
+          <Button mode="platinum" />
         </div>
         <div style={item}>
           <Button className={classes.tutorialButton}>
