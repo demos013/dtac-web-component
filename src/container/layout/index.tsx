@@ -1,9 +1,10 @@
-import React, { FC, memo, ReactElement, ReactNode } from 'react'
-import ReactResizeDetector from 'react-resize-detector'
-import { useRouter } from 'next/router'
-import { makeStyles } from '@material-ui/core/styles'
-import clsx from 'clsx'
-import BackNavBar from 'components/BackNavBar'
+import clsx from 'clsx';
+import React, { FC, memo, ReactElement, ReactNode } from 'react';
+import ReactResizeDetector from 'react-resize-detector';
+
+import { makeStyles } from '@material-ui/core/styles';
+
+import BackNavBar from '../../modular/BackNavBar';
 
 const useStyles = makeStyles((theme) => ({
   page: {
@@ -34,7 +35,6 @@ interface CategoryLayoutProps {
 
 const CategoryLayout: FC<CategoryLayoutProps> = (props) => {
   const { children, titleName, header } = props
-  const router = useRouter()
   const classes = useStyles()
 
   const onReSize = () => {

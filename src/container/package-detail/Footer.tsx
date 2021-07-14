@@ -1,12 +1,10 @@
-import React, { memo, useState } from 'react'
-import Image from 'next/image'
-import { useRouter } from 'next/router'
-import Button from '@material-ui/core/Button'
-import Grid from '@material-ui/core/Grid'
-import { makeStyles } from '@material-ui/core/styles'
-import { Theme } from '@material-ui/core/styles/createMuiTheme'
-import Typography from '@material-ui/core/Typography'
-import NongTuaDPopup from 'components/package-detail/NongTuaDPopup'
+import React, { memo, useState } from 'react';
+
+import Button from '@material-ui/core/Button';
+import Grid from '@material-ui/core/Grid';
+import { makeStyles } from '@material-ui/core/styles';
+import { Theme } from '@material-ui/core/styles/createMuiTheme';
+import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles<Theme>((theme) => ({
   root: {
@@ -57,7 +55,6 @@ const useStyles = makeStyles<Theme>((theme) => ({
 
 const Footer = () => {
   const classes = useStyles()
-  const router = useRouter()
   const [open, setOpen] = useState<boolean>(false)
 
   const onClickBuyNow = () => {
@@ -79,7 +76,7 @@ const Footer = () => {
               <Typography variant="button" className={classes.textTranformNone}>
                 {'Coins earned:'}
               </Typography>
-              <Image unoptimized src={'/images/icon/point.svg'} width={20} height={20} />
+              <img src={'/images/icon/point.svg'} width={20} height={20} />
               <Typography className={classes.fontSize14Bold}>{'300'}</Typography>
             </div>
           </Grid>
@@ -95,17 +92,6 @@ const Footer = () => {
           </Grid>
         </Grid>
       </div>
-      <NongTuaDPopup
-        title={'Your balance is too low'}
-        desc={
-          'Borrow 30 Baht with 2 Baht service fee in emergency loan to buy your selected package'
-        }
-        align={'center'}
-        bulebuttonName={'confirm Emergency Loan'}
-        whitebuttonName={'Refill'}
-        open={open}
-        onClose={() => setOpen(false)}
-      />
     </>
   )
 }
