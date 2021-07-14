@@ -1,19 +1,18 @@
 import { storiesOf } from '@storybook/react'
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
-import { Button, IconButton } from '../components'
 import ChevronRightIcon from '@material-ui/icons/ChevronRight'
-
+import { Button, IconButton } from '../components'
 import './styles.css'
 
 const stories = storiesOf('Button', module)
-const styleBox = { display: 'flex', flexWrap: 'wrap' }
+const styleBox = { display: 'flex' as 'flex', flexWrap: 'wrap' as 'wrap' }
 const item = {
   padding: '2px 30px 16px 2px',
   boxizing: 'border-box',
   flexGrow: 1,
   flexBasis: 'calc(25% - 10px)',
-  textAlign: 'center',
+  textAlign: 'center' as 'center',
 }
 const useStyles = makeStyles((theme) => ({
   gamingnation: {
@@ -30,51 +29,6 @@ const useStyles = makeStyles((theme) => ({
     color: '#FFCB96',
     backgroundColor: '#FFFFFF',
     border: '1px solid #FFCB96',
-  },
-  iconButtonExclusive: {
-    background: '#143F6C',
-    '&:active': {
-      background: '#0c2345',
-    },
-    '&:hover': {
-      background: '#0c2345',
-    },
-  },
-  welcomeButton: {
-    backgroundColor: '#00ADEF',
-    '&:hover': {
-      background: '#0083b5',
-    },
-    '&:active': {
-      background: '#0083b5',
-    },
-  },
-  silverButton: {
-    backgroundColor: '#949599',
-    '&:hover': {
-      background: '#717275',
-    },
-    '&:active': {
-      background: '#717275',
-    },
-  },
-  goldButton: {
-    backgroundColor: '#DBA751',
-    '&:hover': {
-      background: '#AB823F',
-    },
-    '&:active': {
-      background: '#AB823F',
-    },
-  },
-  platinumButton: {
-    backgroundColor: '#143F6C',
-    '&:hover': {
-      background: '#0C2540',
-    },
-    '&:active': {
-      background: '#0C2540',
-    },
   },
   tutorialButton: {
     width: 300,
@@ -165,29 +119,19 @@ stories.add('Icon Button', () => {
         </IconButton>
       </div>
       <div style={item}>
-        <IconButton text="PlatBlue exclusive" className={classes.iconButtonExclusive}>
-          <img src="/images/icon/p-icon.svg" />
-        </IconButton>
+        <IconButton text="PlatBlue exclusive" mode="welcome" />
       </div>
       <div style={item}>
-        <IconButton disabled className={classes.iconButtonExclusive}>
-          <img src="/images/icon/p-icon.svg" />
-        </IconButton>
+        <IconButton disabled mode="welcome" />
       </div>
       <div style={item}>
-        <IconButton className={classes.goldButton}>
-          <img src="/images/icon/g-icon.svg" />
-        </IconButton>
+        <IconButton mode="gold" />
       </div>
       <div style={item}>
-        <IconButton className={classes.silverButton}>
-          <img src="/images/icon/s-icon.svg" />
-        </IconButton>
+        <IconButton mode="silver" />
       </div>
       <div style={item}>
-        <IconButton className={classes.welcomeButton}>
-          <img src="/images/icon/w-icon.svg" />
-        </IconButton>
+        <IconButton mode="platinum" />
       </div>
       <div style={item}>
         <IconButton variant="outlined" size="large" text="Lorem ipsum">
@@ -203,6 +147,18 @@ stories.add('Icon Button', () => {
         <IconButton variant="contained" size="large" text="Lorem ipsum" disabled>
           <img src="/images/icon/circle_icon.svg" />
         </IconButton>
+      </div>
+      <div style={item}>
+        <IconButton mode="platinum" size="large" text="Lorem ipsum" />
+      </div>
+      <div style={item}>
+        <IconButton mode="gold" size="large" text="Lorem ipsum" />
+      </div>
+      <div style={item}>
+        <IconButton mode="silver" size="large" text="Lorem ipsum" />
+      </div>
+      <div style={item}>
+        <IconButton mode="welcome" size="large" text="Lorem ipsum" />
       </div>
     </div>
   )

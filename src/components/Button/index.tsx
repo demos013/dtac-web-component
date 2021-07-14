@@ -20,10 +20,6 @@ const useStyles = makeStyles<Theme, Props>((theme: Theme) => ({
     fontSize: 14,
     padding: '6px 8px',
     boxShadow: '0px 2px 4px rgba(96, 97, 112, 0.16)',
-    '&.Mui-disabled': {
-      color: '#767676',
-      backgroundColor: '#D6D6D6',
-    },
   },
   button_default: {
     color: '#007AD0',
@@ -32,10 +28,6 @@ const useStyles = makeStyles<Theme, Props>((theme: Theme) => ({
       textDecoration: 'none',
       backgroundColor: 'rgba(25, 170, 248, 0.04);',
     },
-    // '&.MuiTouchRipple-root span': {
-    //   backgroundColor: '#19AAF8!important',
-    //   opacity: 0.3,
-    // },
   },
   button_primary: {
     color: '#FFFFFF',
@@ -43,13 +35,6 @@ const useStyles = makeStyles<Theme, Props>((theme: Theme) => ({
     '&:hover': {
       background: '#005a99',
     },
-    '&:active': {
-      background: '#005a99',
-    },
-    // '&.MuiTouchRipple-root span': {
-    //   backgroundColor: '#FFFFFF!important',
-    //   opacity: 1,
-    // },
   },
   button_outlined: {
     color: '#007AD0',
@@ -58,10 +43,6 @@ const useStyles = makeStyles<Theme, Props>((theme: Theme) => ({
       textDecoration: 'none',
       backgroundColor: 'rgba(25, 170, 248, 0.04);',
     },
-    // '&.MuiTouchRipple-root span': {
-    //   backgroundColor: '#19AAF8!important',
-    //   opacity: 0.3,
-    // },
   },
   button_welcome: {
     backgroundColor: '#00ADEF',
@@ -102,7 +83,7 @@ const useStyles = makeStyles<Theme, Props>((theme: Theme) => ({
 }))
 
 interface ButtonProps {
-  children: ReactNode
+  children?: ReactNode
   variant?: 'text' | 'outlined' | 'contained' | undefined
   disabled?: boolean
   width?: string | undefined
@@ -112,6 +93,7 @@ interface ButtonProps {
   onClick?: () => void
   className?: typeof clsx | string
   mode?: 'welcome' | 'silver' | 'gold' | 'platinum'
+  backgroundColor?: 'gradient-flexi'
 }
 
 const ButtonComponent: FC<ButtonProps> = ({
