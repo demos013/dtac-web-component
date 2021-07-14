@@ -1,4 +1,4 @@
-import React, { memo, useState } from 'react';
+import React, { FC, memo } from 'react';
 
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
@@ -53,12 +53,18 @@ const useStyles = makeStyles<Theme>((theme) => ({
   },
 }))
 
-const Footer = () => {
+interface FooterProps {
+  onHandleBuyNow?: () => void
+}
+
+const Footer: FC<FooterProps> = (props) => {
+  const { onHandleBuyNow } = props
   const classes = useStyles()
-  const [open, setOpen] = useState<boolean>(false)
 
   const onClickBuyNow = () => {
-    setOpen(true)
+    if (onHandleBuyNow) {
+      onHandleBuyNow()
+    }
   }
 
   return (
