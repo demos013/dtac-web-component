@@ -8,10 +8,6 @@ import PackageCard from './PackageCard';
 import TabTermCond from './TabTermCond';
 
 const useStyles = makeStyles((theme) => ({
-  pocketWrapper: {
-    padding: 16,
-    backgroundColor: '#fff',
-  },
   fontSize16Bold: {
     fontSize: 16,
     fontWeight: 700,
@@ -37,7 +33,7 @@ const PackageDetail = () => {
 
   useEffect(() => {}, [])
   return (
-    <div className={classes.pocketWrapper}>
+    <>
       <BuyForOtherSection />
       <Typography className={classes.fontSize16Bold}>{'Package purchasing:'}</Typography>
       <PackageCard
@@ -56,7 +52,7 @@ const PackageDetail = () => {
         showSeeDetail={false}
       />
       <TabTermCond />
-    </div>
+    </>
   )
 }
 
