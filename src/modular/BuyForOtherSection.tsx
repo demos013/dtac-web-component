@@ -1,4 +1,4 @@
-import React, { memo, useEffect } from 'react';
+import React, { FC, memo, useEffect } from 'react';
 
 import Divider from '@material-ui/core/Divider';
 import Grid from '@material-ui/core/Grid';
@@ -28,22 +28,40 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const BuyForOtherSection = () => {
+interface BuyForOtherSectionProp {
+  isShowBuyForFriendBtn?: boolean
+}
+
+const BuyForOtherSection: FC<BuyForOtherSectionProp> = (props) => {
   const classes = useStyles()
+  const { isShowBuyForFriendBtn = false } = props
 
   useEffect(() => {}, [])
   return (
     <div>
-      <Grid container>
-        <Grid item xs={6}>
-          <Typography className={classes.fontSize16Bold}>{'Phone number'}</Typography>
-          <Typography className={classes.fontSize16Regular}>{'080-568-6912'}</Typography>
+      {isShowBuyForFriendBtn ? (
+        <Grid container>
+          <Grid item xs={6}>
+            <Typography className={classes.fontSize16Bold}>{'Phone number'}</Typography>
+            <Typography className={classes.fontSize16Regular}>{'080-568-6912'}</Typography>
+          </Grid>
+          <Grid item xs={6} className={classes.buyForOtherGrid}>
+            <Typography className={classes.buyForOtherText}>{'Buy for other'}</Typography>
+            <img src={'/images/icon/blue/arrow_right_blue.svg'} width={5} height={10} />
+          </Grid>
         </Grid>
-        <Grid item xs={6} className={classes.buyForOtherGrid}>
-          <Typography className={classes.buyForOtherText}>{'Buy for other'}</Typography>
-          <img src={'/images/icon/blue/arrow_right_blue.svg'} width={5} height={10} />
+      ) : (
+        <Grid container>
+          <Grid item xs={6}>
+            <Typography className={classes.fontSize16Bold}>{'Phone number'}</Typography>
+          </Grid>
+          <Grid item xs={6}>
+            <Typography className={classes.fontSize16Regular} align="right">
+              {'080-568-6912'}
+            </Typography>
+          </Grid>
         </Grid>
-      </Grid>
+      )}
 
       <Divider className={classes.divider} />
     </div>
